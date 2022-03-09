@@ -109,12 +109,12 @@ class Executor():
                                       value: Union[str, int, float, bool, dict,
                                                    list, Dict, List]):
         if isinstance(value, (float, int)):
-            output = str(value)
+            str(value)
         elif isinstance(value, str):
             # value is already a string.
-            output = value
+            pass
         elif isinstance(value, (bool, list, dict)):
-            output = json.dumps(value)
+            json.dumps(value)
         else:
             raise ValueError(
                 'Unable to serialize unknown type `{}` for parameter'
