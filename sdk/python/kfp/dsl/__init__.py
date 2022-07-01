@@ -15,6 +15,8 @@
 from kfp.components.component_decorator import component
 from kfp.components.container_component_decorator import container_component
 
+from kfp.components.structures import ContainerSpec
+
 from kfp.components.importer_node import importer
 
 from kfp.components.pipeline_channel import (
