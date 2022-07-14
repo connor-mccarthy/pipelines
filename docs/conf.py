@@ -99,16 +99,6 @@ html_theme_options = {
     ],
     'palette': [
         {
-            'media': '(prefers-color-scheme: light)',
-            'scheme': 'default',
-            'primary': 'kfpblue',
-            # "accent": "light-blue",
-            'toggle': {
-                'icon': 'material/lightbulb-outline',
-                'name': 'Switch to dark mode',
-            },
-        },
-        {
             'media': '(prefers-color-scheme: dark)',
             'scheme': 'slate',
             'primary': 'kfpblue',
@@ -116,6 +106,16 @@ html_theme_options = {
             'toggle': {
                 'icon': 'material/lightbulb',
                 'name': 'Switch to light mode',
+            },
+        },
+        {
+            'media': '(prefers-color-scheme: light)',
+            'scheme': 'default',
+            'primary': 'kfpblue',
+            # "accent": "light-blue",
+            'toggle': {
+                'icon': 'material/lightbulb-outline',
+                'name': 'Switch to dark mode',
             },
         },
     ],
