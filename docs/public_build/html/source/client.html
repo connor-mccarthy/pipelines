@@ -1,0 +1,1652 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="">
+    
+    
+      
+        <title>kfp.client - KFP SDK API Reference</title>
+      
+    
+    
+      <link rel="stylesheet" href="../_static/stylesheets/main.2014a6d7.min.css">
+      
+        
+        <link rel="stylesheet" href="../_static/stylesheets/palette.92c9fe4a.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+        <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="kfpblue" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-component="outdated" hidden>
+        <aside class="md-banner md-banner--warning">
+          
+        </aside>
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="KFP SDK API Reference" class="md-header__button md-logo" aria-label="KFP SDK API Reference" data-md-component="logo">
+      <img src="../_static/kubeflow.png" alt="logo">
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KFP SDK API Reference
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              kfp.client
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="kfpblue" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="kfpblue" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/kubeflow/pipelines/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pipelines
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="KFP SDK API Reference" class="md-nav__button md-logo" aria-label="KFP SDK API Reference" data-md-component="logo">
+      <img src="../_static/kubeflow.png" alt="logo">
+    </a>
+    KFP SDK API Reference
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/kubeflow/pipelines/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pipelines
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          <span class="md-ellipsis">Contents</span>
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Contents" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          <span class="md-ellipsis">Contents</span>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        <span title="index (document)" class="md-ellipsis">Home</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2" type="checkbox" id="__nav_1_2" checked>
+      
+      
+      
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="kfp.html"><span title="source/kfp (document)" class="md-ellipsis">API Reference</span></a>
+          
+            <label for="__nav_1_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="API Reference" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          <span title="source/kfp (document)" class="md-ellipsis">API Reference</span>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dsl.html" class="md-nav__link">
+        <span title="source/dsl (document)" class="md-ellipsis">kfp.<wbr>dsl</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="compiler.html" class="md-nav__link">
+        <span title="source/compiler (document)" class="md-ellipsis">kfp.<wbr>compiler</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      <a href="#" class="md-nav__link md-nav__link--active">
+        <span title="source/client (document)" class="md-ellipsis">kfp.<wbr>client</span>
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="components.html" class="md-nav__link">
+        <span title="source/components (document)" class="md-ellipsis">kfp.<wbr>components</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="registry.html" class="md-nav__link">
+        <span title="source/registry (document)" class="md-ellipsis">kfp.<wbr>registry</span>
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cli.html" class="md-nav__link">
+        <span title="source/cli (document)" class="md-ellipsis">kfp CLI</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://kubeflow.org/docs/pipelines/" class="md-nav__link">
+        <span class="md-ellipsis">Usage Docs <wbr>(kubeflow.<wbr>org)</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/kubeflow/pipelines/" class="md-nav__link">
+        <span class="md-ellipsis">Source Code</span>
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset" role="main">
+                
+  <a href="https://github.com/kubeflow/pipelines/blob/master/docs/source/client.rst" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+  <h1 id="kfp-client">kfp.client<a class="headerlink" href="#kfp-client" title="Permalink to this heading">¶</a></h1>
+<dl class="py class objdesc">
+<dt class="sig sig-object highlight sig-wrap py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kfp.client.</span></span><span class="sig-name descname"><span class="pre">Client</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">client_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="s1">&#39;kubeflow&#39;</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">other_client_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">other_client_secret</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">existing_token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">cookies</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">proxy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">ssl_ca_cert</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">kube_context</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">credentials</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">ui_host</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">verify_ssl</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em></span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kfp/client/client.html#Client"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The API Client for KubeFlow Pipelines.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">host</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>The host name to use to talk to Kubeflow Pipelines. If not set,
+the in-cluster service DNS name will be used, which only works if
+the current environment is a pod in the same cluster (such as a
+Jupyter instance spawned by Kubeflow’s JupyterHub).
+Set the host based on
+<a class="reference external" href="https://www.kubeflow.org/docs/components/pipelines/sdk/connect-api/">https://www.kubeflow.org/docs/components/pipelines/sdk/connect-api/</a></p>
+</dd>
+<dt><span class="n sig-name">client_id</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>The client ID used by Identity-Aware Proxy.</p>
+</dd>
+<dt><span class="n sig-name">namespace</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="s1">&#39;kubeflow&#39;</span></code></dt><dd><p>The namespace where the kubeflow pipeline system is run.</p>
+</dd>
+<dt><span class="n sig-name">other_client_id</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>The client ID used to obtain the auth codes and refresh
+tokens. References:
+<a class="reference external" href="https://cloud.google.com/iap/docs/authentication-howto#authenticating_from_a_desktop_app">https://cloud.google.com/iap/docs/authentication-howto#authenticating_from_a_desktop_app</a>.</p>
+</dd>
+<dt><span class="n sig-name">other_client_secret</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>The client secret used to obtain the auth codes and
+refresh tokens.</p>
+</dd>
+<dt><span class="n sig-name">existing_token</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>Pass in token directly, it’s used for cases better get
+token outside of SDK, e.x. GCP Cloud Functions or caller already has
+a token.</p>
+</dd>
+<dt><span class="n sig-name">cookies</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>CookieJar object containing cookies that will be passed to the
+pipelines API.</p>
+</dd>
+<dt><span class="n sig-name">proxy</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>HTTP or HTTPS proxy server.</p>
+</dd>
+<dt><span class="n sig-name">ssl_ca_cert</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>Cert for proxy.</p>
+</dd>
+<dt><span class="n sig-name">kube_context</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>String name of context within kubeconfig to use, defaults
+to the current-context set within kubeconfig.</p>
+</dd>
+<dt><span class="n sig-name">credentials</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>A TokenCredentialsBase object which provides the logic to
+populate the requests with credentials to authenticate against the
+API server.</p>
+</dd>
+<dt><span class="n sig-name">ui_host</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>Base url to use to open the Kubeflow Pipelines UI. This is used
+when running the client from a notebook to generate and print links.</p>
+</dd>
+<dt><span class="n sig-name">verify_ssl</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">bool<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>Whether to verify the servers TLS certificate or not.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py attribute objdesc">
+<dt class="sig sig-object highlight py">
+<span class="sig-name descname"><span class="pre">IN_CLUSTER_DNS_NAME</span></span><span class="p"> <span class="pre">=</span> </span><code class="code python docutils literal highlight highlight-python"><span class="s1">&#39;ml-pipeline.</span><span class="si">{}</span><span class="s1">.svc.cluster.local:8888&#39;</span></code></dt>
+<dd></dd></dl>
+
+<dl class="py attribute objdesc">
+<dt class="sig sig-object highlight sig-wrap py">
+<span class="sig-name descname"><span class="pre">KUBE_PROXY_PATH</span></span><span class="p"> <span class="pre">=</span> </span><code class="code python docutils literal highlight highlight-python"><span class="s1">&#39;api/v1/namespaces/</span><span class="si">{}</span><span class="s1">/services/ml-pipeline:http/proxy/&#39;</span></code></dt>
+<dd></dd></dl>
+
+<dl class="py attribute objdesc">
+<dt class="sig sig-object highlight py">
+<span class="sig-name descname"><span class="pre">LOCAL_KFP_CONTEXT</span></span><span class="p"> <span class="pre">=</span> </span><code class="code python docutils literal highlight highlight-python"><span class="s1">&#39;/Users/cjmccarthy/.config/kfp/context.json&#39;</span></code></dt>
+<dd></dd></dl>
+
+<dl class="py attribute objdesc">
+<dt class="sig sig-object highlight sig-wrap py">
+<span class="sig-name descname"><span class="pre">NAMESPACE_PATH</span></span><span class="p"> <span class="pre">=</span> </span><code class="code python docutils literal highlight highlight-python"><span class="s1">&#39;/var/run/secrets/kubernetes.io/serviceaccount/namespace&#39;</span></code></dt>
+<dd></dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight py">
+<span class="sig-name descname"><span class="pre">archive_experiment</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">experiment_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">dict</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.archive_experiment"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Archives an experiment.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">experiment_id</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span></dt><dd><p>id of the experiment.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>Empty dictionary.</p>
+</dd>
+<dt class="field-odd" id="return-type">Return type<a class="headerlink" href="#return-type" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight py">
+<span class="sig-name descname"><span class="pre">archive_run</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">run_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">dict</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.archive_run"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Archives a run.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">run_id</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span></dt><dd><p>id of the run.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>Empty dictionary.</p>
+</dd>
+<dt class="field-odd" id="return-type">Return type<a class="headerlink" href="#return-type" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight sig-wrap py">
+<span class="sig-name descname"><span class="pre">create_experiment</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">ApiExperiment</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.create_experiment"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Create a new experiment.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">name</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span></dt><dd><p>The name of the experiment.</p>
+</dd>
+<dt><span class="n sig-name">description</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>Description of the experiment.</p>
+</dd>
+<dt><span class="n sig-name">namespace</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>The Kubernetes namespace where the experiment should be
+created.
+For single user deployment, leave it as None;
+For multi user, input a namespace where the user is authorized.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>ApiExperiment object.</p>
+</dd>
+<dt class="field-odd" id="return-type">Return type<a class="headerlink" href="#return-type" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>kfp_server_api.ApiExperiment</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight sig-wrap py">
+<span class="sig-name descname"><span class="pre">create_recurring_run</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">experiment_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">job_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">start_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">end_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">interval_second</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">cron_expression</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">max_concurrency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="mi">1</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">no_catchup</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">pipeline_package_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">pipeline_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">version_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">enabled</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">bool</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">True</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">pipeline_root</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">enable_caching</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">service_account</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">ApiJob</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.create_recurring_run"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Creates a recurring run.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">experiment_id</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span></dt><dd><p>The string id of an experiment.</p>
+</dd>
+<dt><span class="n sig-name">job_name</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span></dt><dd><p>Name of the job.</p>
+</dd>
+<dt><span class="sig-name descname">description</span><span class="p"> : </span><span class="desctype"><span class="desctype">Optional</span></span></dt><dd><p>Job description.</p>
+</dd>
+<dt><span class="n sig-name">start_time</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>The RFC3339 time string of the time when to start the
+job.</p>
+</dd>
+<dt><span class="n sig-name">end_time</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>The RFC3339 time string of the time when to end the job.</p>
+</dd>
+<dt><span class="n sig-name">interval_second</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">int<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>Integer indicating the seconds between two
+recurring runs in for a periodic schedule.</p>
+</dd>
+<dt><span class="n sig-name">cron_expression</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>A cron expression representing a set of times,
+using 6 space-separated fields, e.g. “0 0 9 ? * 2-6”. See:
+<a class="reference external" href="https://pkg.go.dev/github.com/robfig/cron#hdr-CRON_Expression_Format">https://pkg.go.dev/github.com/robfig/cron#hdr-CRON_Expression_Format</a></p>
+</dd>
+<dt><span class="n sig-name">max_concurrency</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">int<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="mi">1</span></code></dt><dd><p>Integer indicating how many jobs can be run in
+parallel.</p>
+</dd>
+<dt><span class="n sig-name">no_catchup</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">bool<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>Whether the recurring run should catch up if behind
+schedule. For example, if the recurring run is paused for a
+while and re-enabled afterwards. If no_catchup=False, the
+scheduler will catch up on (backfill) each missed interval.
+Otherwise, it only schedules the latest interval if more than
+one interval is ready to be scheduled. Usually, if your pipeline
+handles backfill internally, you should turn catchup off to
+avoid duplicate backfill. (default: {False})</p>
+</dd>
+<dt><span class="n sig-name">pipeline_package_path</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>Local path of the pipeline package (the
+filename should end with one of the following .tar.gz, .tgz,
+.zip, .json).</p>
+</dd>
+<dt><span class="n sig-name">params</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">dict<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>A dictionary with key as param name and value as param value.</p>
+</dd>
+<dt><span class="n sig-name">pipeline_id</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>The id of a pipeline.</p>
+</dd>
+<dt><span class="n sig-name">version_id</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>The id of a pipeline version.
+If both pipeline_id and version_id are specified, version_id
+will take precedence.
+If only pipeline_id is specified, the default version of this
+pipeline is used to create the run.</p>
+</dd>
+<dt><span class="n sig-name">enabled</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">bool</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">True</span></code></dt><dd><p>A bool indicating whether the recurring run is enabled or
+disabled.</p>
+</dd>
+<dt><span class="n sig-name">pipeline_root</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>The root path of the pipeline outputs.</p>
+</dd>
+<dt><span class="sig-name descname">enable_caching</span><span class="p"> : </span><span class="desctype"><span class="desctype">Optional</span></span></dt><dd><p>Whether or not to enable caching for the
+run. If not set, defaults to the compile time settings, which
+are True for all tasks by default, while users may specify
+different caching options for individual tasks. If set, the
+setting applies to all tasks in the pipeline (overrides the
+compile time settings).</p>
+</dd>
+<dt><span class="sig-name descname">service_account</span><span class="p"> : </span><span class="desctype"><span class="desctype">Optional</span></span></dt><dd><p>Specifies which Kubernetes service
+account this recurring run uses.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>ApiJob object.</p>
+</dd>
+<dt class="field-odd" id="return-type">Return type<a class="headerlink" href="#return-type" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>kfp_server_api.ApiJob</p>
+</dd>
+<dt class="field-even" id="raises">Raises<a class="headerlink" href="#raises" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If required parameters are not supplied.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight sig-wrap py">
+<span class="sig-name descname"><span class="pre">create_run_from_pipeline_func</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">pipeline_func</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">Callable</span></span></span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">arguments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">run_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">experiment_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">pipeline_root</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">enable_caching</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">service_account</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">RunPipelineResult</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.create_run_from_pipeline_func"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Runs pipeline on KFP-enabled Kubernetes cluster.</p>
+<p>This command compiles the pipeline function, creates or gets an
+experiment and submits the pipeline for execution.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">pipeline_func</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">Callable</span></span></dt><dd><p>A function that describes a pipeline by calling
+components and composing them into execution graph.</p>
+</dd>
+<dt><span class="n sig-name">arguments</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">Mapping<span class="p">[</span>str<span class="p">,</span><span class="w">   </span>Any<span class="p">]</span><span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>Arguments to the pipeline function provided as a dict.</p>
+</dd>
+<dt><span class="sig-name descname">run_name</span><span class="p"> : </span><span class="desctype"><span class="desctype">Optional</span></span></dt><dd><p>Name of the run to be shown in the UI.</p>
+</dd>
+<dt><span class="sig-name descname">experiment_name</span><span class="p"> : </span><span class="desctype"><span class="desctype">Optional</span></span></dt><dd><p>Name of the experiment to add the run to.</p>
+</dd>
+<dt><span class="n sig-name">namespace</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>Kubernetes namespace where the pipeline runs are created.
+For single user deployment, leave it as None;
+For multi user, input a namespace where the user is authorized</p>
+</dd>
+<dt><span class="n sig-name">pipeline_root</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>The root path of the pipeline outputs.</p>
+</dd>
+<dt><span class="sig-name descname">enable_caching</span><span class="p"> : </span><span class="desctype"><span class="desctype">Optional</span></span></dt><dd><p>Whether or not to enable caching for the
+run. If not set, defaults to the compile time settings, which
+are True for all tasks by default, while users may specify
+different caching options for individual tasks. If set, the
+setting applies to all tasks in the pipeline (overrides the
+compile time settings).</p>
+</dd>
+<dt><span class="sig-name descname">service_account</span><span class="p"> : </span><span class="desctype"><span class="desctype">Optional</span></span></dt><dd><p>Specifies which Kubernetes service
+account this run uses.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>RunPipelineResult object containing information about the pipeline run.</p>
+</dd>
+<dt class="field-odd" id="return-type">Return type<a class="headerlink" href="#return-type" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>RunPipelineResult</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight sig-wrap py">
+<span class="sig-name descname"><span class="pre">create_run_from_pipeline_package</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">pipeline_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">arguments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">run_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">experiment_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">pipeline_root</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">enable_caching</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">service_account</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">RunPipelineResult</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.create_run_from_pipeline_package"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Runs pipeline on KFP-enabled Kubernetes cluster.</p>
+<p>This command takes a local pipeline package, creates or gets an
+experiment and submits the pipeline for execution.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">pipeline_file</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span></dt><dd><p>A compiled pipeline package file.</p>
+</dd>
+<dt><span class="n sig-name">arguments</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">Mapping<span class="p">[</span>str<span class="p">,</span><span class="w">   </span>str<span class="p">]</span><span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>Arguments to the pipeline function provided as a dict.</p>
+</dd>
+<dt><span class="sig-name descname">run_name</span><span class="p"> : </span><span class="desctype"><span class="desctype">Optional</span></span></dt><dd><p>Name of the run to be shown in the UI.</p>
+</dd>
+<dt><span class="sig-name descname">experiment_name</span><span class="p"> : </span><span class="desctype"><span class="desctype">Optional</span></span></dt><dd><p>Name of the experiment to add the run to.</p>
+</dd>
+<dt><span class="sig-name descname">namespace</span><span class="p"> : </span><span class="desctype"><span class="desctype">Optional</span></span></dt><dd><p>Kubernetes namespace where the pipeline runs are created.
+For single user deployment, leave it as None;
+For multi user, input a namespace where the user is authorized</p>
+</dd>
+<dt><span class="sig-name descname">pipeline_root</span><span class="p"> : </span><span class="desctype"><span class="desctype">Optional</span></span></dt><dd><p>The root path of the pipeline outputs.</p>
+</dd>
+<dt><span class="sig-name descname">enable_caching</span><span class="p"> : </span><span class="desctype"><span class="desctype">Optional</span></span></dt><dd><p>Whether or not to enable caching for the
+run. If not set, defaults to the compile time settings, which
+are True for all tasks by default, while users may specify
+different caching options for individual tasks. If set, the
+setting applies to all tasks in the pipeline (overrides the
+compile time settings).</p>
+</dd>
+<dt><span class="sig-name descname">service_account</span><span class="p"> : </span><span class="desctype"><span class="desctype">Optional</span></span></dt><dd><p>Specifies which Kubernetes service
+account this run uses.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>RunPipelineResult object containing information about the pipeline run.</p>
+</dd>
+<dt class="field-odd" id="return-type">Return type<a class="headerlink" href="#return-type" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>RunPipelineResult</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight py">
+<span class="sig-name descname"><span class="pre">delete_experiment</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">experiment_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">dict</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.delete_experiment"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Delete experiment.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">experiment_id</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span></dt><dd><p>id of the experiment.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>Empty dictionary.</p>
+</dd>
+<dt class="field-odd" id="return-type">Return type<a class="headerlink" href="#return-type" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even" id="raises">Raises<a class="headerlink" href="#raises" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>kfp_server_api.ApiException</strong> – If experiment is not found.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight py">
+<span class="sig-name descname"><span class="pre">delete_job</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">job_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">dict</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.delete_job"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Deletes a job.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">job_id</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span></dt><dd><p>id of the job.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>Empty dictionary.</p>
+</dd>
+<dt class="field-odd" id="return-type">Return type<a class="headerlink" href="#return-type" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even" id="raises">Raises<a class="headerlink" href="#raises" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>kfp_server_api.ApiException</strong> – If the job is not found.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight py">
+<span class="sig-name descname"><span class="pre">delete_pipeline</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">pipeline_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">dict</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.delete_pipeline"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Deletes a pipeline.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">pipeline_id</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span></dt><dd><p>id of the pipeline.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>Empty dictionary.</p>
+</dd>
+<dt class="field-odd" id="return-type">Return type<a class="headerlink" href="#return-type" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even" id="raises">Raises<a class="headerlink" href="#raises" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>kfp_server_api.ApiException</strong> – If pipeline is not found.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight py">
+<span class="sig-name descname"><span class="pre">delete_pipeline_version</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">version_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">dict</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.delete_pipeline_version"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Deletes a pipeline version.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">version_id</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span></dt><dd><p>id of the pipeline version.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>Empty dictionary.</p>
+</dd>
+<dt class="field-odd" id="return-type">Return type<a class="headerlink" href="#return-type" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even" id="raises">Raises<a class="headerlink" href="#raises" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>kfp_server_api.ApiException</strong> – If pipeline is not found.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight py">
+<span class="sig-name descname"><span class="pre">delete_run</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">run_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">dict</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.delete_run"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Deletes a run.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">run_id</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span></dt><dd><p>id of the run.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>Empty dictionary.</p>
+</dd>
+<dt class="field-odd" id="return-type">Return type<a class="headerlink" href="#return-type" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight py">
+<span class="sig-name descname"><span class="pre">disable_job</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">job_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">dict</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.disable_job"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Disables a job.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">job_id</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span></dt><dd><p>id of the job.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>Empty dictionary.</p>
+</dd>
+<dt class="field-odd" id="return-type">Return type<a class="headerlink" href="#return-type" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even" id="raises">Raises<a class="headerlink" href="#raises" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>kfp_server_api.ApiException</strong> – If the job is not found.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight py">
+<span class="sig-name descname"><span class="pre">enable_job</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">job_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">dict</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.enable_job"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Enables a job.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">job_id</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span></dt><dd><p>id of the job.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>Empty dictionary.</p>
+</dd>
+<dt class="field-odd" id="return-type">Return type<a class="headerlink" href="#return-type" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even" id="raises">Raises<a class="headerlink" href="#raises" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>kfp_server_api.ApiException</strong> – If the job is not found.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight sig-wrap py">
+<span class="sig-name descname"><span class="pre">get_experiment</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">experiment_id</span></span><span class="o"><span class="pre">=</span></span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">experiment_name</span></span><span class="o"><span class="pre">=</span></span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="o"><span class="pre">=</span></span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">ApiExperiment</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.get_experiment"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Gets details of an experiment.</p>
+<p>Either experiment_id or experiment_name is required.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="sig-name descname">experiment_id</span><span class="p"> : </span><span class="desctype"><span class="desctype">Optional</span></span></dt><dd><p>Id of the experiment.</p>
+</dd>
+<dt><span class="sig-name descname">experiment_name</span><span class="p"> : </span><span class="desctype"><span class="desctype">Optional</span></span></dt><dd><p>Name of the experiment.</p>
+</dd>
+<dt><span class="n sig-name">namespace</span><span class="o">=</span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>Kubernetes namespace where the experiment was created.
+For single user deployment, leave it as None;
+For multi user, input the namespace where the user is authorized.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>ApiExperiment object.</p>
+</dd>
+<dt class="field-odd" id="return-type">Return type<a class="headerlink" href="#return-type" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>kfp_server_api.ApiExperiment</p>
+</dd>
+<dt class="field-even" id="raises">Raises<a class="headerlink" href="#raises" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>kfp_server_api.ApiException</strong> – If experiment is not found or None of
+    the arguments is provided</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight py">
+<span class="sig-name descname"><span class="pre">get_kfp_healthz</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">ApiGetHealthzResponse</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.get_kfp_healthz"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Gets healthz info of KFP deployment.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>json formatted response from the healtz endpoint.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight py">
+<span class="sig-name descname"><span class="pre">get_pipeline</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">pipeline_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">ApiPipeline</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.get_pipeline"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Gets pipeline details.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">pipeline_id</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span></dt><dd><p>id of the pipeline.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>ApiPipeline object.</p>
+</dd>
+<dt class="field-odd" id="return-type">Return type<a class="headerlink" href="#return-type" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>kfp_server_api.ApiPipeline</p>
+</dd>
+<dt class="field-even" id="raises">Raises<a class="headerlink" href="#raises" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>kfp_server_api.ApiException</strong> – If pipeline is not found.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight py">
+<span class="sig-name descname"><span class="pre">get_pipeline_id</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">name</span></span></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.get_pipeline_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Find the id of a pipeline by name.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">name</span></dt><dd><p>Pipeline name.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>The pipeline id if a pipeline with the name exists.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight py">
+<span class="sig-name descname"><span class="pre">get_pipeline_version</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">version_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">ApiPipelineVersion</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.get_pipeline_version"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Gets a pipeline version.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">version_id</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span></dt><dd><p>id of the pipeline version.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>ApiPipelineVersion object.</p>
+</dd>
+<dt class="field-odd" id="return-type">Return type<a class="headerlink" href="#return-type" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>kfp_server_api.ApiPipelineVersion</p>
+</dd>
+<dt class="field-even" id="raises">Raises<a class="headerlink" href="#raises" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>kfp_server_api.ApiException</strong> – If pipeline version is not found.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight py">
+<span class="sig-name descname"><span class="pre">get_recurring_run</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">job_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">ApiJob</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.get_recurring_run"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Gets recurring_run details.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">job_id</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span></dt><dd><p>id of the recurring_run.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>ApiJob object.</p>
+</dd>
+<dt class="field-odd" id="return-type">Return type<a class="headerlink" href="#return-type" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>kfp_server_api.ApiJob</p>
+</dd>
+<dt class="field-even" id="raises">Raises<a class="headerlink" href="#raises" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>kfp_server_api.ApiException</strong> – If recurring_run is not found.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight py">
+<span class="sig-name descname"><span class="pre">get_run</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">run_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">ApiRun</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.get_run"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Gets run details.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">run_id</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span></dt><dd><p>id of the run.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>ApiRun object.</p>
+</dd>
+<dt class="field-odd" id="return-type">Return type<a class="headerlink" href="#return-type" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>kfp_server_api.ApiRun</p>
+</dd>
+<dt class="field-even" id="raises">Raises<a class="headerlink" href="#raises" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>kfp_server_api.ApiException</strong> – If run is not found.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight py">
+<span class="sig-name descname"><span class="pre">get_user_namespace</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">str</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.get_user_namespace"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Get user namespace in context config.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>kubernetes namespace from the local context file or empty if it
+wasn’t set.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight sig-wrap py">
+<span class="sig-name descname"><span class="pre">list_experiments</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">page_token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="s1">&#39;&#39;</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">page_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">int</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="mi">10</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">sort_by</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="s1">&#39;&#39;</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">filter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">ApiListExperimentsResponse</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.list_experiments"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Lists experiments.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">page_token</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="s1">&#39;&#39;</span></code></dt><dd><p>Token for starting of the page.</p>
+</dd>
+<dt><span class="n sig-name">page_size</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">int</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="mi">10</span></code></dt><dd><p>Size of the page.</p>
+</dd>
+<dt><span class="n sig-name">sort_by</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="s1">&#39;&#39;</span></code></dt><dd><p>Can be ‘[field_name]’, ‘[field_name] desc’. For example,
+‘name desc’.</p>
+</dd>
+<dt><span class="n sig-name">namespace</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>Kubernetes namespace where the experiment was created.
+For single user deployment, leave it as None;
+For multi user, input a namespace where the user is authorized.</p>
+</dd>
+<dt><span class="n sig-name">filter</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p><p>A url-encoded, JSON-serialized Filter protocol buffer
+(see [filter.proto](<a class="reference external" href="https://github.com/kubeflow/pipelines/blob/master/backend/api/filter.proto">https://github.com/kubeflow/pipelines/blob/master/backend/api/filter.proto</a>)).</p>
+<p>An example filter string would be:</p>
+<blockquote>
+<div><p># For the list of filter operations please see:
+# <a class="reference external" href="https://github.com/kubeflow/pipelines/blob/master/sdk/python/kfp/client/client.py#L36">https://github.com/kubeflow/pipelines/blob/master/sdk/python/kfp/client/client.py#L36</a>
+json.dumps({</p>
+<blockquote>
+<div><dl class="simple">
+<dt>”predicates”: [{</dt><dd><p>“op”: _FILTER_OPERATIONS[“EQUALS”],
+“key”: “name”,
+“stringValue”: “my-name”,</p>
+</dd>
+</dl>
+<p>}]</p>
+</div></blockquote>
+<p>})</p>
+</div></blockquote>
+</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>ApiListExperimentsResponse object.</p>
+</dd>
+<dt class="field-odd" id="return-type">Return type<a class="headerlink" href="#return-type" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>kfp_server_api.ApiListExperimentsResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight sig-wrap py">
+<span class="sig-name descname"><span class="pre">list_pipeline_versions</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">pipeline_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">page_token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="s1">&#39;&#39;</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">page_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">int</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="mi">10</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">sort_by</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="s1">&#39;&#39;</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">filter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">ApiListPipelineVersionsResponse</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.list_pipeline_versions"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Lists pipeline versions.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">pipeline_id</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span></dt><dd><p>Id of the pipeline to list versions</p>
+</dd>
+<dt><span class="n sig-name">page_token</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="s1">&#39;&#39;</span></code></dt><dd><p>Token for starting of the page.</p>
+</dd>
+<dt><span class="n sig-name">page_size</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">int</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="mi">10</span></code></dt><dd><p>Size of the page.</p>
+</dd>
+<dt><span class="n sig-name">sort_by</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="s1">&#39;&#39;</span></code></dt><dd><p>One of ‘field_name’, ‘field_name desc’. For example,
+‘name desc’.</p>
+</dd>
+<dt><span class="n sig-name">filter</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p><p>A url-encoded, JSON-serialized Filter protocol buffer
+(see [filter.proto](<a class="reference external" href="https://github.com/kubeflow/pipelines/blob/master/backend/api/filter.proto">https://github.com/kubeflow/pipelines/blob/master/backend/api/filter.proto</a>)).</p>
+<p>An example filter string would be:</p>
+<blockquote>
+<div><p># For the list of filter operations please see:
+# <a class="reference external" href="https://github.com/kubeflow/pipelines/blob/master/sdk/python/kfp/_client.py#L40">https://github.com/kubeflow/pipelines/blob/master/sdk/python/kfp/_client.py#L40</a>
+json.dumps({</p>
+<blockquote>
+<div><dl class="simple">
+<dt>”predicates”: [{</dt><dd><p>“op”: _FILTER_OPERATIONS[“EQUALS”],
+“key”: “name”,
+“stringValue”: “my-name”,</p>
+</dd>
+</dl>
+<p>}]</p>
+</div></blockquote>
+<p>})</p>
+</div></blockquote>
+</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>ApiListPipelineVersionsResponse object.</p>
+</dd>
+<dt class="field-odd" id="return-type">Return type<a class="headerlink" href="#return-type" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>kfp_server_api.ApiListPipelineVersionsResponse</p>
+</dd>
+<dt class="field-even" id="raises">Raises<a class="headerlink" href="#raises" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>kfp_server_api.ApiException</strong> – If pipeline is not found.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight sig-wrap py">
+<span class="sig-name descname"><span class="pre">list_pipelines</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">page_token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="s1">&#39;&#39;</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">page_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">int</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="mi">10</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">sort_by</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="s1">&#39;&#39;</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">filter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">ApiListPipelinesResponse</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.list_pipelines"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Lists pipelines.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">page_token</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="s1">&#39;&#39;</span></code></dt><dd><p>Token for starting of the page.</p>
+</dd>
+<dt><span class="n sig-name">page_size</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">int</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="mi">10</span></code></dt><dd><p>Size of the page.</p>
+</dd>
+<dt><span class="n sig-name">sort_by</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="s1">&#39;&#39;</span></code></dt><dd><p>one of ‘field_name’, ‘field_name desc’. For example,
+‘name desc’.</p>
+</dd>
+<dt><span class="n sig-name">filter</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p><p>A url-encoded, JSON-serialized Filter protocol buffer
+(see [filter.proto](<a class="reference external" href="https://github.com/kubeflow/pipelines/blob/master/backend/api/filter.proto">https://github.com/kubeflow/pipelines/blob/master/backend/api/filter.proto</a>)).</p>
+<p>An example filter string would be:</p>
+<blockquote>
+<div><p># For the list of filter operations please see:
+# <a class="reference external" href="https://github.com/kubeflow/pipelines/blob/master/sdk/python/kfp/_client.py#L40">https://github.com/kubeflow/pipelines/blob/master/sdk/python/kfp/_client.py#L40</a>
+json.dumps({</p>
+<blockquote>
+<div><dl class="simple">
+<dt>”predicates”: [{</dt><dd><p>“op”: _FILTER_OPERATIONS[“EQUALS”],
+“key”: “name”,
+“stringValue”: “my-name”,</p>
+</dd>
+</dl>
+<p>}]</p>
+</div></blockquote>
+<p>})</p>
+</div></blockquote>
+</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>ApiListPipelinesResponse object.</p>
+</dd>
+<dt class="field-odd" id="return-type">Return type<a class="headerlink" href="#return-type" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>kfp_server_api.ApiListPipelinesResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight sig-wrap py">
+<span class="sig-name descname"><span class="pre">list_recurring_runs</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">page_token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="s1">&#39;&#39;</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">page_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">int</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="mi">10</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">sort_by</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="s1">&#39;&#39;</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">experiment_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">filter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">ApiListJobsResponse</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.list_recurring_runs"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Lists recurring runs.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">page_token</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="s1">&#39;&#39;</span></code></dt><dd><p>Token for starting of the page.</p>
+</dd>
+<dt><span class="n sig-name">page_size</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">int</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="mi">10</span></code></dt><dd><p>Size of the page.</p>
+</dd>
+<dt><span class="n sig-name">sort_by</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="s1">&#39;&#39;</span></code></dt><dd><p>One of ‘field_name’, ‘field_name desc’. For example,
+‘name desc’.</p>
+</dd>
+<dt><span class="n sig-name">experiment_id</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>Experiment id to filter upon.</p>
+</dd>
+<dt><span class="n sig-name">filter</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p><p>A url-encoded, JSON-serialized Filter protocol buffer
+(see [filter.proto](<a class="reference external" href="https://github.com/kubeflow/pipelines/blob/master/backend/api/filter.proto">https://github.com/kubeflow/pipelines/blob/master/backend/api/filter.proto</a>)).</p>
+<p>An example filter string would be:</p>
+<blockquote>
+<div><p># For the list of filter operations please see:
+# <a class="reference external" href="https://github.com/kubeflow/pipelines/blob/master/sdk/python/kfp/_client.py#L40">https://github.com/kubeflow/pipelines/blob/master/sdk/python/kfp/_client.py#L40</a>
+json.dumps({</p>
+<blockquote>
+<div><dl class="simple">
+<dt>”predicates”: [{</dt><dd><p>“op”: _FILTER_OPERATIONS[“EQUALS”],
+“key”: “name”,
+“stringValue”: “my-name”,</p>
+</dd>
+</dl>
+<p>}]</p>
+</div></blockquote>
+<p>})</p>
+</div></blockquote>
+</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>ApiListJobsResponse object.</p>
+</dd>
+<dt class="field-odd" id="return-type">Return type<a class="headerlink" href="#return-type" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>kfp_server_api.ApiListJobsResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight sig-wrap py">
+<span class="sig-name descname"><span class="pre">list_runs</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">page_token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="s1">&#39;&#39;</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">page_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">int</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="mi">10</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">sort_by</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="s1">&#39;&#39;</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">experiment_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">filter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">ApiListRunsResponse</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.list_runs"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>List runs, optionally can be filtered by experiment or namespace.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">page_token</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="s1">&#39;&#39;</span></code></dt><dd><p>Token for starting of the page.</p>
+</dd>
+<dt><span class="n sig-name">page_size</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">int</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="mi">10</span></code></dt><dd><p>Size of the page.</p>
+</dd>
+<dt><span class="n sig-name">sort_by</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="s1">&#39;&#39;</span></code></dt><dd><p>One of ‘field_name’, ‘field_name desc’. For example,
+‘name desc’.</p>
+</dd>
+<dt><span class="n sig-name">experiment_id</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>Experiment id to filter upon</p>
+</dd>
+<dt><span class="n sig-name">namespace</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>Kubernetes namespace to filter upon.
+For single user deployment, leave it as None;
+For multi user, input a namespace where the user is authorized.</p>
+</dd>
+<dt><span class="n sig-name">filter</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p><dl>
+<dt>A url-encoded, JSON-serialized Filter protocol buffer</dt><dd><p>(see [filter.proto](<a class="reference external" href="https://github.com/kubeflow/pipelines/blob/master/backend/api/filter.proto">https://github.com/kubeflow/pipelines/blob/master/backend/api/filter.proto</a>)).</p>
+<p>An example filter string would be:</p>
+<blockquote>
+<div><p># For the list of filter operations please see:
+# <a class="reference external" href="https://github.com/kubeflow/pipelines/blob/master/sdk/python/kfp/_client.py#L40">https://github.com/kubeflow/pipelines/blob/master/sdk/python/kfp/_client.py#L40</a>
+json.dumps({</p>
+<blockquote>
+<div><dl class="simple">
+<dt>”predicates”: [{</dt><dd><p>“op”: _FILTER_OPERATIONS[“EQUALS”],
+“key”: “name”,
+“stringValue”: “my-name”,</p>
+</dd>
+</dl>
+<p>}]</p>
+</div></blockquote>
+<p>})</p>
+</div></blockquote>
+</dd>
+<dt>Returns:</dt><dd><p>kfp_server_api.ApiListRunsResponse: ApiListRunsResponse object.</p>
+</dd>
+</dl>
+</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight sig-wrap py">
+<span class="sig-name descname"><span class="pre">run_pipeline</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">experiment_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">job_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">pipeline_package_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">pipeline_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">version_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">pipeline_root</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">enable_caching</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">service_account</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">ApiRun</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.run_pipeline"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Runs a specified pipeline.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">experiment_id</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span></dt><dd><p>The id of an experiment.</p>
+</dd>
+<dt><span class="n sig-name">job_name</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span></dt><dd><p>Name of the job.</p>
+</dd>
+<dt><span class="n sig-name">pipeline_package_path</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>Local path of the pipeline package (the
+filename should end with one of the following .tar.gz, .tgz,
+.zip, .json).</p>
+</dd>
+<dt><span class="n sig-name">params</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">Mapping<span class="p">[</span>str<span class="p">,</span><span class="w">   </span>Any<span class="p">]</span><span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>A dictionary with key (string) as param name and value
+(string) as as param value.</p>
+</dd>
+<dt><span class="n sig-name">pipeline_id</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>The id of a pipeline.</p>
+</dd>
+<dt><span class="n sig-name">version_id</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>The id of a pipeline version.
+If both pipeline_id and version_id are specified, version_id
+will take precendence.
+If only pipeline_id is specified, the default version of this
+pipeline is used to create the run.</p>
+</dd>
+<dt><span class="n sig-name">pipeline_root</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>The root path of the pipeline outputs.</p>
+</dd>
+<dt><span class="sig-name descname">enable_caching</span><span class="p"> : </span><span class="desctype"><span class="desctype">Optional</span></span></dt><dd><p>. Whether or not to enable caching for the
+run. If not set, defaults to the compile time settings, which
+are True for all tasks by default, while users may specify
+different caching options for individual tasks. If set, the
+setting applies to all tasks in the pipeline (overrides the
+compile time settings).</p>
+</dd>
+<dt><span class="sig-name descname">service_account</span><span class="p"> : </span><span class="desctype"><span class="desctype">Optional</span></span></dt><dd><p>Specifies which Kubernetes service
+account this run uses.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>ApiRun object.</p>
+</dd>
+<dt class="field-odd" id="return-type">Return type<a class="headerlink" href="#return-type" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>kfp_server_api.ApiRun</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight py">
+<span class="sig-name descname"><span class="pre">set_user_namespace</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">None</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.set_user_namespace"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Set user namespace into local context setting file.</p>
+<p>This function should only be used when Kubeflow Pipelines is in the
+multi-user mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">namespace</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span></dt><dd><p>kubernetes namespace the user has access to.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight py">
+<span class="sig-name descname"><span class="pre">terminate_run</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">run_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">dict</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.terminate_run"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Terminates a run.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">run_id</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span></dt><dd><p>id of the run.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>Empty dictionary.</p>
+</dd>
+<dt class="field-odd" id="return-type">Return type<a class="headerlink" href="#return-type" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight py">
+<span class="sig-name descname"><span class="pre">unarchive_experiment</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">experiment_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">dict</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.unarchive_experiment"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Unarchives an experiment.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">experiment_id</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span></dt><dd><p>id of the experiment.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>Empty dictionary.</p>
+</dd>
+<dt class="field-odd" id="return-type">Return type<a class="headerlink" href="#return-type" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight py">
+<span class="sig-name descname"><span class="pre">unarchive_run</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">run_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">dict</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.unarchive_run"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Restores an archived run.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">run_id</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span></dt><dd><p>id of the run.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>Empty dictionary.</p>
+</dd>
+<dt class="field-odd" id="return-type">Return type<a class="headerlink" href="#return-type" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight sig-wrap py">
+<span class="sig-name descname"><span class="pre">upload_pipeline</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">pipeline_package_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">pipeline_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">ApiPipeline</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.upload_pipeline"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Uploads the pipeline to the Kubeflow Pipelines cluster.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">pipeline_package_path</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str<span class="w">   </span><span class="p">|</span><span class="w">   </span>None</span></span><span class="w">   </span><span class="o">=</span><span class="w">   </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></dt><dd><p>Local path to the pipeline package.</p>
+</dd>
+<dt><span class="sig-name descname">pipeline_name</span><span class="p"> : </span><span class="desctype"><span class="desctype">Optional</span></span></dt><dd><p>Name of the pipeline to be shown in the UI.</p>
+</dd>
+<dt><span class="sig-name descname">description</span><span class="p"> : </span><span class="desctype"><span class="desctype">Optional</span></span></dt><dd><p>Description of the pipeline to be shown in
+the UI.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>ApiPipeline object.</p>
+</dd>
+<dt class="field-odd" id="return-type">Return type<a class="headerlink" href="#return-type" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>kfp_server_api.ApiPipeline</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight sig-wrap py">
+<span class="sig-name descname"><span class="pre">upload_pipeline_version</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">pipeline_package_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">pipeline_version_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">pipeline_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">pipeline_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><code class="code python default_value docutils literal highlight highlight-python"><span class="kc">None</span></code></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">ApiPipelineVersion</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.upload_pipeline_version"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Uploads a new version of the pipeline to the KFP cluster.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">pipeline_package_path</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span></dt><dd><p>Local path to the pipeline package.</p>
+</dd>
+<dt><span class="n sig-name">pipeline_version_name</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span></dt><dd><p>Name of the pipeline version to be shown in
+the UI.</p>
+</dd>
+<dt><span class="sig-name descname">pipeline_id</span><span class="p"> : </span><span class="desctype"><span class="desctype">Optional</span></span></dt><dd><p>Id of the pipeline.</p>
+</dd>
+<dt><span class="sig-name descname">pipeline_name</span><span class="p"> : </span><span class="desctype"><span class="desctype">Optional</span></span></dt><dd><p>Name of the pipeline.</p>
+</dd>
+<dt><span class="sig-name descname">description</span><span class="p"> : </span><span class="desctype"><span class="desctype">Optional</span></span></dt><dd><p>Description of the pipeline version to be
+shown in the UI.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>ApiPipelineVersion object.</p>
+</dd>
+<dt class="field-odd" id="return-type">Return type<a class="headerlink" href="#return-type" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>kfp_server_api.ApiPipelineVersion</p>
+</dd>
+<dt class="field-even" id="raises">Raises<a class="headerlink" href="#raises" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – when none or both of pipeline_id or pipeline_name are
+    specified.</p></li>
+<li><p><strong>kfp_server_api.ApiException</strong> – If pipeline id is not found.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method objdesc">
+<dt class="sig sig-object highlight py">
+<span class="sig-name descname"><span class="pre">wait_for_run_completion</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">run_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">str</span></span></span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="desctype"><span class="pre">int</span></span></span></em></span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="desctype"><span class="pre">ApiRun</span></span></span></span><a class="reference internal" href="../_modules/kfp/client/client.html#Client.wait_for_run_completion"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Waits for a run to complete.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple api-field highlight">
+<dt><span class="n sig-name">run_id</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">str</span></span></dt><dd><p>Run id, returned from run_pipeline.</p>
+</dd>
+<dt><span class="n sig-name">timeout</span><span class="p">:</span><span class="w">   </span><span class="n"><span class="desctype">int</span></span></dt><dd><p>Timeout in seconds.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even" id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>ApiRun object.</p>
+</dd>
+<dt class="field-odd" id="return-type">Return type<a class="headerlink" href="#return-type" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>kfp_server_api.ApiRun</p>
+</dd>
+<dt class="field-even" id="raises">Raises<a class="headerlink" href="#raises" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>TimeoutError</strong> – if the pipeline run failed to finish before the
+    specified timeout.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="compiler.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: kfp.compiler" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              kfp.compiler
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="components.html" class="md-footer__link md-footer__link--next" aria-label="Next: kfp.components" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              kfp.components
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  
+  
+  <div class="md-footer-meta md-typeset">
+    
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-footer-copyright__highlight">
+        &#169; Copyright 2022, The Kubeflow Authors.
+        
+    </div>
+  
+    Created using
+    <a href="https://www.sphinx-doc.org/" target="_blank" rel="noopener">Sphinx</a>
+    5.0.2.
+     and
+    <a href="https://github.com/jbms/sphinx-immaterial/" target="_blank" rel="noopener">Sphinx-Immaterial</a>
+  
+</div>
+      
+    </div>
+    
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.sections", "navigation.top", "search.highlight", "search.share", "toc.follow", "toc.sticky"], "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike", "staticVersions": [{"aliases": [], "title": "v2.0.0b1", "version": "file:///Users/cjmccarthy/workspace/pipelines/docs/_build/html/index.html#"}, {"aliases": [], "title": "v1.8.13", "version": "https://kubeflow-pipelines.readthedocs.io/en/stable/"}], "versionPath": null}}</script>
+    
+    
+      <script src="../_static/javascripts/bundle.dc1bded0.min.js"></script>
+    
+  </body>
+</html>

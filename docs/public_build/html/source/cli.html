@@ -1,0 +1,1362 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="">
+    
+    
+      
+        <title>kfp CLI - KFP SDK API Reference</title>
+      
+    
+    
+      <link rel="stylesheet" href="../_static/stylesheets/main.2014a6d7.min.css">
+      
+        
+        <link rel="stylesheet" href="../_static/stylesheets/palette.92c9fe4a.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+        <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="kfpblue" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-component="outdated" hidden>
+        <aside class="md-banner md-banner--warning">
+          
+        </aside>
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="KFP SDK API Reference" class="md-header__button md-logo" aria-label="KFP SDK API Reference" data-md-component="logo">
+      <img src="../_static/kubeflow.png" alt="logo">
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KFP SDK API Reference
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              kfp CLI
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="kfpblue" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="kfpblue" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/kubeflow/pipelines/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pipelines
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="KFP SDK API Reference" class="md-nav__button md-logo" aria-label="KFP SDK API Reference" data-md-component="logo">
+      <img src="../_static/kubeflow.png" alt="logo">
+    </a>
+    KFP SDK API Reference
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/kubeflow/pipelines/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pipelines
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          <span class="md-ellipsis">Contents</span>
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Contents" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          <span class="md-ellipsis">Contents</span>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        <span title="index (document)" class="md-ellipsis">Home</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kfp.html" class="md-nav__link">
+        <span title="source/kfp (document)" class="md-ellipsis">API Reference</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      <a href="#" class="md-nav__link md-nav__link--active">
+        <span title="source/cli (document)" class="md-ellipsis">kfp CLI</span>
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://kubeflow.org/docs/pipelines/" class="md-nav__link">
+        <span class="md-ellipsis">Usage Docs <wbr>(kubeflow.<wbr>org)</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/kubeflow/pipelines/" class="md-nav__link">
+        <span class="md-ellipsis">Source Code</span>
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset" role="main">
+                
+  <a href="https://github.com/kubeflow/pipelines/blob/master/docs/source/cli.rst" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+  <h1 id="kfp-cli">kfp CLI<a class="headerlink" href="#kfp-cli" title="Permalink to this heading">¶</a></h1>
+<nav class="contents" id="all-commands">
+<p class="topic-title">All commands</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#kfp-cli" id="id1">kfp CLI</a></p>
+<ul>
+<li><p><a class="reference internal" href="#kfp" id="id2">kfp</a></p>
+<ul>
+<li><p><a class="reference internal" href="#kfp-component" id="id3">component</a></p>
+<ul>
+<li><p><a class="reference internal" href="#kfp-component-build" id="id4">build</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#kfp-diagnose-me" id="id5">diagnose-me</a></p></li>
+<li><p><a class="reference internal" href="#kfp-dsl" id="id6">dsl</a></p>
+<ul>
+<li><p><a class="reference internal" href="#kfp-dsl-dsl-compile" id="id7">dsl-compile</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#kfp-experiment" id="id8">experiment</a></p>
+<ul>
+<li><p><a class="reference internal" href="#kfp-experiment-archive" id="id9">archive</a></p></li>
+<li><p><a class="reference internal" href="#kfp-experiment-create" id="id10">create</a></p></li>
+<li><p><a class="reference internal" href="#kfp-experiment-delete" id="id11">delete</a></p></li>
+<li><p><a class="reference internal" href="#kfp-experiment-get" id="id12">get</a></p></li>
+<li><p><a class="reference internal" href="#kfp-experiment-list" id="id13">list</a></p></li>
+<li><p><a class="reference internal" href="#kfp-experiment-unarchive" id="id14">unarchive</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#kfp-pipeline" id="id15">pipeline</a></p>
+<ul>
+<li><p><a class="reference internal" href="#kfp-pipeline-create" id="id16">create</a></p></li>
+<li><p><a class="reference internal" href="#kfp-pipeline-create-version" id="id17">create-version</a></p></li>
+<li><p><a class="reference internal" href="#kfp-pipeline-delete" id="id18">delete</a></p></li>
+<li><p><a class="reference internal" href="#kfp-pipeline-delete-version" id="id19">delete-version</a></p></li>
+<li><p><a class="reference internal" href="#kfp-pipeline-get" id="id20">get</a></p></li>
+<li><p><a class="reference internal" href="#kfp-pipeline-get-version" id="id21">get-version</a></p></li>
+<li><p><a class="reference internal" href="#kfp-pipeline-list" id="id22">list</a></p></li>
+<li><p><a class="reference internal" href="#kfp-pipeline-list-versions" id="id23">list-versions</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#kfp-recurring-run" id="id24">recurring-run</a></p>
+<ul>
+<li><p><a class="reference internal" href="#kfp-recurring-run-create" id="id25">create</a></p></li>
+<li><p><a class="reference internal" href="#kfp-recurring-run-delete" id="id26">delete</a></p></li>
+<li><p><a class="reference internal" href="#kfp-recurring-run-disable" id="id27">disable</a></p></li>
+<li><p><a class="reference internal" href="#kfp-recurring-run-enable" id="id28">enable</a></p></li>
+<li><p><a class="reference internal" href="#kfp-recurring-run-get" id="id29">get</a></p></li>
+<li><p><a class="reference internal" href="#kfp-recurring-run-list" id="id30">list</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#kfp-run" id="id31">run</a></p>
+<ul>
+<li><p><a class="reference internal" href="#kfp-run-archive" id="id32">archive</a></p></li>
+<li><p><a class="reference internal" href="#kfp-run-create" id="id33">create</a></p></li>
+<li><p><a class="reference internal" href="#kfp-run-delete" id="id34">delete</a></p></li>
+<li><p><a class="reference internal" href="#kfp-run-get" id="id35">get</a></p></li>
+<li><p><a class="reference internal" href="#kfp-run-list" id="id36">list</a></p></li>
+<li><p><a class="reference internal" href="#kfp-run-unarchive" id="id37">unarchive</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+<h2 id="kfp">kfp<a class="headerlink" href="#kfp" title="Permalink to this heading">¶</a></h2>
+<p>Kubeflow Pipelines CLI.</p>
+<p>The KFP CLI is currently in Alpha feature stage (<a class="reference external" href="https://github.com/kubeflow/pipelines/blob/07328e5094ac2981d3059314cc848fbb71437a76/docs/release/feature-stages.md#alpha">https://github.com/kubeflow/pipelines/blob/07328e5094ac2981d3059314cc848fbb71437a76/docs/release/feature-stages.md#alpha</a>).</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp <span class="o">[</span>OPTIONS<span class="o">]</span> COMMAND <span class="o">[</span>ARGS<span class="o">]</span>...
+</code></pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-show-completion">
+<span class="sig-name descname"><span class="pre">--show-completion</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;show_completion&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-show-completion" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd" id="cmdoption-kfp-show-completion-options">Options<a class="headerlink" href="#cmdoption-kfp-show-completion-options" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>bash | zsh | fish</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-install-completion">
+<span class="sig-name descname"><span class="pre">--install-completion</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;install_completion&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-install-completion" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd" id="cmdoption-kfp-install-completion-options">Options<a class="headerlink" href="#cmdoption-kfp-install-completion-options" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>bash | zsh | fish</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-endpoint">
+<span class="sig-name descname"><span class="pre">--endpoint</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;endpoint&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-endpoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>The host name to use to talk to Kubeflow Pipelines. If not set, the in-cluster service DNS name will be used, which only works if the current environment is a pod in the same cluster (such as a Jupyter instance spawned by Kubeflow’s JupyterHub). Set the host based on <a class="reference external" href="https://www.kubeflow.org/docs/components/pipelines/sdk/connect-api/">https://www.kubeflow.org/docs/components/pipelines/sdk/connect-api/</a></p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-iap-client-id">
+<span class="sig-name descname"><span class="pre">--iap-client-id</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;iap_client_id&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-iap-client-id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The client ID used by Identity-Aware Proxy.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-n">
+<span id="cmdoption-kfp-namespace"></span><span class="sig-name descname"><span class="pre">-n</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--namespace</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;namespace&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-n" title="Permalink to this definition">¶</a></dt>
+<dd><p>The namespace where the kubeflow pipeline system is run.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="cmdoption-kfp-n-default">Default<a class="headerlink" href="#cmdoption-kfp-n-default" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>kubeflow</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-other-client-id">
+<span class="sig-name descname"><span class="pre">--other-client-id</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;other_client_id&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-other-client-id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The client ID used to obtain the auth codes and refresh tokens. References: <a class="reference external" href="https://cloud.google.com/iap/docs/authentication-howto#authenticating_from_a_desktop_app">https://cloud.google.com/iap/docs/authentication-howto#authenticating_from_a_desktop_app</a>.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-other-client-secret">
+<span class="sig-name descname"><span class="pre">--other-client-secret</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;other_client_secret&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-other-client-secret" title="Permalink to this definition">¶</a></dt>
+<dd><p>The client secret used to obtain the auth codes and refresh tokens.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-output">
+<span class="sig-name descname"><span class="pre">--output</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;output&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-output" title="Permalink to this definition">¶</a></dt>
+<dd><p>The formatting style for command output.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="cmdoption-kfp-output-default">Default<a class="headerlink" href="#cmdoption-kfp-output-default" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-odd"><p>table</p>
+</dd>
+<dt class="field-even" id="cmdoption-kfp-output-options">Options<a class="headerlink" href="#cmdoption-kfp-output-options" title="Permalink to this headline">¶</a><span class="colon">:</span></dt>
+<dd class="field-even"><p>table | json</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-version">
+<span class="sig-name descname"><span class="pre">--version</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show the version and exit.</p>
+</dd></dl>
+
+<h3 id="kfp-component">component<a class="headerlink" href="#kfp-component" title="Permalink to this heading">¶</a></h3>
+<p>Builds shareable, containerized components.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp component <span class="o">[</span>OPTIONS<span class="o">]</span> COMMAND <span class="o">[</span>ARGS<span class="o">]</span>...
+</code></pre></div>
+</div>
+<h4 id="kfp-component-build">build<a class="headerlink" href="#kfp-component-build" title="Permalink to this heading">¶</a></h4>
+<p>Builds containers for KFP v2 Python-based components.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp component build <span class="o">[</span>OPTIONS<span class="o">]</span> COMPONENTS_DIRECTORY
+</code></pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-component-build-component-filepattern">
+<span class="sig-name descname"><span class="pre">--component-filepattern</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;component_filepattern&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-component-build-component-filepattern" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filepattern to use when searching for KFP components. The default searches all Python files in the specified directory.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-component-build-engine">
+<span class="sig-name descname"><span class="pre">--engine</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;engine&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-component-build-engine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Engine to use to build the component’s container.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-component-build-kfp-package-path">
+<span class="sig-name descname"><span class="pre">--kfp-package-path</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;kfp_package_path&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-component-build-kfp-package-path" title="Permalink to this definition">¶</a></dt>
+<dd><p>A pip-installable path to the KFP package.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-component-build-overwrite-dockerfile">
+<span class="sig-name descname"><span class="pre">--overwrite-dockerfile</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-component-build-overwrite-dockerfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set this to true to always generate a Dockerfile as part of the build process</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-component-build-push-image">
+<span id="cmdoption-kfp-component-build-no-push-image"></span><span class="sig-name descname"><span class="pre">--push-image</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-push-image</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-component-build-push-image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Push the built image to its remote repository.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-component-build-arg-COMPONENTS_DIRECTORY">
+<span id="cmdoption-kfp-component-build-arg-components-directory"></span><span class="sig-name descname"><span class="pre">COMPONENTS_DIRECTORY</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-component-build-arg-COMPONENTS_DIRECTORY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+<h3 id="kfp-diagnose-me">diagnose-me<a class="headerlink" href="#kfp-diagnose-me" title="Permalink to this heading">¶</a></h3>
+<p>Runs KFP environment diagnostic.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp diagnose-me <span class="o">[</span>OPTIONS<span class="o">]</span>
+</code></pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-diagnose-me-j">
+<span id="cmdoption-kfp-diagnose-me-json"></span><span class="sig-name descname"><span class="pre">-j</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--json</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-diagnose-me-j" title="Permalink to this definition">¶</a></dt>
+<dd><p>Output in Json format, human readable format is set by default.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-diagnose-me-p">
+<span id="cmdoption-kfp-diagnose-me-project-id"></span><span class="sig-name descname"><span class="pre">-p</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--project-id</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;project_id&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-diagnose-me-p" title="Permalink to this definition">¶</a></dt>
+<dd><p>Target project id. It will use environment default if not specified.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-diagnose-me-n">
+<span id="cmdoption-kfp-diagnose-me-namespace"></span><span class="sig-name descname"><span class="pre">-n</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--namespace</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;namespace&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-diagnose-me-n" title="Permalink to this definition">¶</a></dt>
+<dd><p>Namespace to use for Kubernetes cluster.all-namespaces is used if not specified.</p>
+</dd></dl>
+
+<h3 id="kfp-dsl">dsl<a class="headerlink" href="#kfp-dsl" title="Permalink to this heading">¶</a></h3>
+<p>Command group for compiling DSL to IR.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp dsl <span class="o">[</span>OPTIONS<span class="o">]</span> COMMAND <span class="o">[</span>ARGS<span class="o">]</span>...
+</code></pre></div>
+</div>
+<h4 id="kfp-dsl-dsl-compile">dsl-compile<a class="headerlink" href="#kfp-dsl-dsl-compile" title="Permalink to this heading">¶</a></h4>
+<p>Compiles a pipeline written in a .py file.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp dsl dsl-compile <span class="o">[</span>OPTIONS<span class="o">]</span>
+</code></pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-dsl-dsl-compile-py">
+<span class="sig-name descname"><span class="pre">--py</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;py&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-dsl-dsl-compile-py" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Required</strong> Local absolute path to a py file.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-dsl-dsl-compile-output">
+<span class="sig-name descname"><span class="pre">--output</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;output&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-dsl-dsl-compile-output" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Required</strong> Path to write the compiled result.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-dsl-dsl-compile-function">
+<span class="sig-name descname"><span class="pre">--function</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;function_name&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-dsl-dsl-compile-function" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the pipeline or component to compile if there are multiple.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-dsl-dsl-compile-pipeline-parameters">
+<span class="sig-name descname"><span class="pre">--pipeline-parameters</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;pipeline_parameters&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-dsl-dsl-compile-pipeline-parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>The pipeline parameters in JSON dict format.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-dsl-dsl-compile-disable-type-check">
+<span class="sig-name descname"><span class="pre">--disable-type-check</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-dsl-dsl-compile-disable-type-check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether to disable type checking.</p>
+</dd></dl>
+
+<h3 id="kfp-experiment">experiment<a class="headerlink" href="#kfp-experiment" title="Permalink to this heading">¶</a></h3>
+<p>Manage experiment resources.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp experiment <span class="o">[</span>OPTIONS<span class="o">]</span> COMMAND <span class="o">[</span>ARGS<span class="o">]</span>...
+</code></pre></div>
+</div>
+<h4 id="kfp-experiment-archive">archive<a class="headerlink" href="#kfp-experiment-archive" title="Permalink to this heading">¶</a></h4>
+<p>Archive an experiment.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp experiment archive <span class="o">[</span>OPTIONS<span class="o">]</span>
+</code></pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-experiment-archive-experiment-id">
+<span class="sig-name descname"><span class="pre">--experiment-id</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;experiment_id&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-experiment-archive-experiment-id" title="Permalink to this definition">¶</a></dt>
+<dd><p>id of the experiment. Either –experiment-id or –experiment-name is required.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-experiment-archive-experiment-name">
+<span class="sig-name descname"><span class="pre">--experiment-name</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;experiment_name&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-experiment-archive-experiment-name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of the experiment. Either –experiment-id or –experiment-name is required.</p>
+</dd></dl>
+
+<h4 id="kfp-experiment-create">create<a class="headerlink" href="#kfp-experiment-create" title="Permalink to this heading">¶</a></h4>
+<p>Create an experiment.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp experiment create <span class="o">[</span>OPTIONS<span class="o">]</span> NAME
+</code></pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-experiment-create-d">
+<span id="cmdoption-kfp-experiment-create-description"></span><span class="sig-name descname"><span class="pre">-d</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--description</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;description&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-experiment-create-d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description of the experiment.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-experiment-create-arg-NAME">
+<span id="cmdoption-kfp-experiment-create-arg-name"></span><span class="sig-name descname"><span class="pre">NAME</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-experiment-create-arg-NAME" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+<h4 id="kfp-experiment-delete">delete<a class="headerlink" href="#kfp-experiment-delete" title="Permalink to this heading">¶</a></h4>
+<p>Delete an experiment.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp experiment delete <span class="o">[</span>OPTIONS<span class="o">]</span> EXPERIMENT_ID
+</code></pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-experiment-delete-arg-EXPERIMENT_ID">
+<span id="cmdoption-kfp-experiment-delete-arg-experiment-id"></span><span class="sig-name descname"><span class="pre">EXPERIMENT_ID</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-experiment-delete-arg-EXPERIMENT_ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+<h4 id="kfp-experiment-get">get<a class="headerlink" href="#kfp-experiment-get" title="Permalink to this heading">¶</a></h4>
+<p>Get information about an experiment.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp experiment get <span class="o">[</span>OPTIONS<span class="o">]</span> EXPERIMENT_ID
+</code></pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-experiment-get-arg-EXPERIMENT_ID">
+<span id="cmdoption-kfp-experiment-get-arg-experiment-id"></span><span class="sig-name descname"><span class="pre">EXPERIMENT_ID</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-experiment-get-arg-EXPERIMENT_ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+<h4 id="kfp-experiment-list">list<a class="headerlink" href="#kfp-experiment-list" title="Permalink to this heading">¶</a></h4>
+<p>List experiments.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp experiment list <span class="o">[</span>OPTIONS<span class="o">]</span>
+</code></pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-experiment-list-page-token">
+<span class="sig-name descname"><span class="pre">--page-token</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;page_token&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-experiment-list-page-token" title="Permalink to this definition">¶</a></dt>
+<dd><p>Token for starting of the page.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-experiment-list-m">
+<span id="cmdoption-kfp-experiment-list-max-size"></span><span class="sig-name descname"><span class="pre">-m</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--max-size</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;max_size&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-experiment-list-m" title="Permalink to this definition">¶</a></dt>
+<dd><p>Size of the page.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-experiment-list-sort-by">
+<span class="sig-name descname"><span class="pre">--sort-by</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;sort_by&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-experiment-list-sort-by" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can be ‘[field_name]’, ‘[field_name] desc’. For example, ‘name desc’.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-experiment-list-filter">
+<span class="sig-name descname"><span class="pre">--filter</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;filter&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-experiment-list-filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>A url-encoded, JSON-serialized Filter protocol buffer (see [filter.proto](<a class="reference external" href="https://github.com/kubeflow/pipelines/blob/master/backend/api/filter.proto">https://github.com/kubeflow/pipelines/blob/master/backend/api/filter.proto</a>)).</p>
+</dd></dl>
+
+<h4 id="kfp-experiment-unarchive">unarchive<a class="headerlink" href="#kfp-experiment-unarchive" title="Permalink to this heading">¶</a></h4>
+<p>Unarchive an experiment.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp experiment unarchive <span class="o">[</span>OPTIONS<span class="o">]</span>
+</code></pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-experiment-unarchive-experiment-id">
+<span class="sig-name descname"><span class="pre">--experiment-id</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;experiment_id&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-experiment-unarchive-experiment-id" title="Permalink to this definition">¶</a></dt>
+<dd><p>id of the experiment. Either –experiment-id or –experiment-name is required.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-experiment-unarchive-experiment-name">
+<span class="sig-name descname"><span class="pre">--experiment-name</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;experiment_name&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-experiment-unarchive-experiment-name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of the experiment. Either –experiment-id or –experiment-name is required.</p>
+</dd></dl>
+
+<h3 id="kfp-pipeline">pipeline<a class="headerlink" href="#kfp-pipeline" title="Permalink to this heading">¶</a></h3>
+<p>Manage pipeline resources.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp pipeline <span class="o">[</span>OPTIONS<span class="o">]</span> COMMAND <span class="o">[</span>ARGS<span class="o">]</span>...
+</code></pre></div>
+</div>
+<h4 id="kfp-pipeline-create">create<a class="headerlink" href="#kfp-pipeline-create" title="Permalink to this heading">¶</a></h4>
+<p>Upload a pipeline.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp pipeline create <span class="o">[</span>OPTIONS<span class="o">]</span> PACKAGE_FILE
+</code></pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-pipeline-create-p">
+<span id="cmdoption-kfp-pipeline-create-pipeline-name"></span><span class="sig-name descname"><span class="pre">-p</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--pipeline-name</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;pipeline_name&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-pipeline-create-p" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of the pipeline to be shown in the UI.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-pipeline-create-d">
+<span id="cmdoption-kfp-pipeline-create-description"></span><span class="sig-name descname"><span class="pre">-d</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--description</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;description&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-pipeline-create-d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description of the pipeline to be shown in the UI.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-pipeline-create-arg-PACKAGE_FILE">
+<span id="cmdoption-kfp-pipeline-create-arg-package-file"></span><span class="sig-name descname"><span class="pre">PACKAGE_FILE</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-pipeline-create-arg-PACKAGE_FILE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+<h4 id="kfp-pipeline-create-version">create-version<a class="headerlink" href="#kfp-pipeline-create-version" title="Permalink to this heading">¶</a></h4>
+<p>Upload a version of a pipeline.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp pipeline create-version <span class="o">[</span>OPTIONS<span class="o">]</span> PACKAGE_FILE
+</code></pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-pipeline-create-version-v">
+<span id="cmdoption-kfp-pipeline-create-version-pipeline-version"></span><span class="sig-name descname"><span class="pre">-v</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--pipeline-version</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;pipeline_version&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-pipeline-create-version-v" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Required</strong> Name of the pipeline version to be shown in the UI.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-pipeline-create-version-p">
+<span id="cmdoption-kfp-pipeline-create-version-pipeline-id"></span><span class="sig-name descname"><span class="pre">-p</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--pipeline-id</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;pipeline_id&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-pipeline-create-version-p" title="Permalink to this definition">¶</a></dt>
+<dd><p>Id of the pipeline. Either –pipeline-id or –pipeline-name is required.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-pipeline-create-version-n">
+<span id="cmdoption-kfp-pipeline-create-version-pipeline-name"></span><span class="sig-name descname"><span class="pre">-n</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--pipeline-name</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;pipeline_name&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-pipeline-create-version-n" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of the pipeline. Either –pipeline-id or –pipeline-name is required.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-pipeline-create-version-d">
+<span id="cmdoption-kfp-pipeline-create-version-description"></span><span class="sig-name descname"><span class="pre">-d</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--description</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;description&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-pipeline-create-version-d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description of the pipeline version to be shown in the UI.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-pipeline-create-version-arg-PACKAGE_FILE">
+<span id="cmdoption-kfp-pipeline-create-version-arg-package-file"></span><span class="sig-name descname"><span class="pre">PACKAGE_FILE</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-pipeline-create-version-arg-PACKAGE_FILE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+<h4 id="kfp-pipeline-delete">delete<a class="headerlink" href="#kfp-pipeline-delete" title="Permalink to this heading">¶</a></h4>
+<p>Delete a pipeline.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp pipeline delete <span class="o">[</span>OPTIONS<span class="o">]</span> PIPELINE_ID
+</code></pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-pipeline-delete-arg-PIPELINE_ID">
+<span id="cmdoption-kfp-pipeline-delete-arg-pipeline-id"></span><span class="sig-name descname"><span class="pre">PIPELINE_ID</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-pipeline-delete-arg-PIPELINE_ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+<h4 id="kfp-pipeline-delete-version">delete-version<a class="headerlink" href="#kfp-pipeline-delete-version" title="Permalink to this heading">¶</a></h4>
+<p>Delete a version of a pipeline.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp pipeline delete-version <span class="o">[</span>OPTIONS<span class="o">]</span> VERSION_ID
+</code></pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-pipeline-delete-version-arg-VERSION_ID">
+<span id="cmdoption-kfp-pipeline-delete-version-arg-version-id"></span><span class="sig-name descname"><span class="pre">VERSION_ID</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-pipeline-delete-version-arg-VERSION_ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+<h4 id="kfp-pipeline-get">get<a class="headerlink" href="#kfp-pipeline-get" title="Permalink to this heading">¶</a></h4>
+<p>Get information about a pipeline.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp pipeline get <span class="o">[</span>OPTIONS<span class="o">]</span> PIPELINE_ID
+</code></pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-pipeline-get-arg-PIPELINE_ID">
+<span id="cmdoption-kfp-pipeline-get-arg-pipeline-id"></span><span class="sig-name descname"><span class="pre">PIPELINE_ID</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-pipeline-get-arg-PIPELINE_ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+<h4 id="kfp-pipeline-get-version">get-version<a class="headerlink" href="#kfp-pipeline-get-version" title="Permalink to this heading">¶</a></h4>
+<p>Get information about a version of a pipeline.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp pipeline get-version <span class="o">[</span>OPTIONS<span class="o">]</span> VERSION_ID
+</code></pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-pipeline-get-version-arg-VERSION_ID">
+<span id="cmdoption-kfp-pipeline-get-version-arg-version-id"></span><span class="sig-name descname"><span class="pre">VERSION_ID</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-pipeline-get-version-arg-VERSION_ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+<h4 id="kfp-pipeline-list">list<a class="headerlink" href="#kfp-pipeline-list" title="Permalink to this heading">¶</a></h4>
+<p>List pipelines.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp pipeline list <span class="o">[</span>OPTIONS<span class="o">]</span>
+</code></pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-pipeline-list-page-token">
+<span class="sig-name descname"><span class="pre">--page-token</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;page_token&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-pipeline-list-page-token" title="Permalink to this definition">¶</a></dt>
+<dd><p>Token for starting of the page.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-pipeline-list-m">
+<span id="cmdoption-kfp-pipeline-list-max-size"></span><span class="sig-name descname"><span class="pre">-m</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--max-size</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;max_size&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-pipeline-list-m" title="Permalink to this definition">¶</a></dt>
+<dd><p>Size of the page.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-pipeline-list-sort-by">
+<span class="sig-name descname"><span class="pre">--sort-by</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;sort_by&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-pipeline-list-sort-by" title="Permalink to this definition">¶</a></dt>
+<dd><p>one of ‘field_name’, ‘field_name desc’. For example, ‘name desc’.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-pipeline-list-filter">
+<span class="sig-name descname"><span class="pre">--filter</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;filter&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-pipeline-list-filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>A url-encoded, JSON-serialized Filter protocol buffer (see [filter.proto](<a class="reference external" href="https://github.com/kubeflow/pipelines/blob/master/backend/api/filter.proto">https://github.com/kubeflow/pipelines/blob/master/backend/api/filter.proto</a>)).</p>
+</dd></dl>
+
+<h4 id="kfp-pipeline-list-versions">list-versions<a class="headerlink" href="#kfp-pipeline-list-versions" title="Permalink to this heading">¶</a></h4>
+<p>List versions of a pipeline.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp pipeline list-versions <span class="o">[</span>OPTIONS<span class="o">]</span> PIPELINE_ID
+</code></pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-pipeline-list-versions-page-token">
+<span class="sig-name descname"><span class="pre">--page-token</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;page_token&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-pipeline-list-versions-page-token" title="Permalink to this definition">¶</a></dt>
+<dd><p>Token for starting of the page.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-pipeline-list-versions-m">
+<span id="cmdoption-kfp-pipeline-list-versions-max-size"></span><span class="sig-name descname"><span class="pre">-m</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--max-size</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;max_size&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-pipeline-list-versions-m" title="Permalink to this definition">¶</a></dt>
+<dd><p>Size of the page.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-pipeline-list-versions-sort-by">
+<span class="sig-name descname"><span class="pre">--sort-by</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;sort_by&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-pipeline-list-versions-sort-by" title="Permalink to this definition">¶</a></dt>
+<dd><p>One of ‘field_name’, ‘field_name desc’. For example, ‘name desc’.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-pipeline-list-versions-filter">
+<span class="sig-name descname"><span class="pre">--filter</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;filter&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-pipeline-list-versions-filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>A url-encoded, JSON-serialized Filter protocol buffer (see [filter.proto](<a class="reference external" href="https://github.com/kubeflow/pipelines/blob/master/backend/api/filter.proto">https://github.com/kubeflow/pipelines/blob/master/backend/api/filter.proto</a>)).</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-pipeline-list-versions-arg-PIPELINE_ID">
+<span id="cmdoption-kfp-pipeline-list-versions-arg-pipeline-id"></span><span class="sig-name descname"><span class="pre">PIPELINE_ID</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-pipeline-list-versions-arg-PIPELINE_ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+<h3 id="kfp-recurring-run">recurring-run<a class="headerlink" href="#kfp-recurring-run" title="Permalink to this heading">¶</a></h3>
+<p>Manage recurring run resources.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp recurring-run <span class="o">[</span>OPTIONS<span class="o">]</span> COMMAND <span class="o">[</span>ARGS<span class="o">]</span>...
+</code></pre></div>
+</div>
+<h4 id="kfp-recurring-run-create">create<a class="headerlink" href="#kfp-recurring-run-create" title="Permalink to this heading">¶</a></h4>
+<p>Create a recurring run.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp recurring-run create <span class="o">[</span>OPTIONS<span class="o">]</span> <span class="o">[</span>ARGS<span class="o">]</span>...
+</code></pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-recurring-run-create-catchup">
+<span id="cmdoption-kfp-recurring-run-create-no-catchup"></span><span class="sig-name descname"><span class="pre">--catchup</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-catchup</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-recurring-run-create-catchup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether the recurring run should catch up if behind schedule. For example, if the recurring run is paused for a while and re-enabled afterwards. If no_catchup=False, the scheduler will catch up on (backfill) each missed interval. Otherwise, it only schedules the latest interval if more than one interval is ready to be scheduled. Usually, if your pipeline handles backfill internally, you should turn catchup off to avoid duplicate backfill. (default: {False})</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-recurring-run-create-cron-expression">
+<span class="sig-name descname"><span class="pre">--cron-expression</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;cron_expression&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-recurring-run-create-cron-expression" title="Permalink to this definition">¶</a></dt>
+<dd><p>A cron expression representing a set of times, using 6 space-separated fields, e.g. “0 0 9 ? * 2-6”. See: <a class="reference external" href="https://pkg.go.dev/github.com/robfig/cron#hdr-CRON_Expression_Format">https://pkg.go.dev/github.com/robfig/cron#hdr-CRON_Expression_Format</a></p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-recurring-run-create-description">
+<span class="sig-name descname"><span class="pre">--description</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;description&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-recurring-run-create-description" title="Permalink to this definition">¶</a></dt>
+<dd><p>Job description.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-recurring-run-create-enable-caching">
+<span id="cmdoption-kfp-recurring-run-create-disable-caching"></span><span class="sig-name descname"><span class="pre">--enable-caching</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--disable-caching</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-recurring-run-create-enable-caching" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether or not to enable caching for the run. If not set, defaults to the compile time settings, which are True for all tasks by default, while users may specify different caching options for individual tasks. If set, the setting applies to all tasks in the pipeline (overrides the compile time settings).</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-recurring-run-create-enabled">
+<span id="cmdoption-kfp-recurring-run-create-disabled"></span><span class="sig-name descname"><span class="pre">--enabled</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--disabled</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-recurring-run-create-enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>A bool indicating whether the recurring run is enabled or disabled.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-recurring-run-create-end-time">
+<span class="sig-name descname"><span class="pre">--end-time</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;end_time&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-recurring-run-create-end-time" title="Permalink to this definition">¶</a></dt>
+<dd><p>The RFC3339 time string of the time when to end the job.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-recurring-run-create-experiment-id">
+<span class="sig-name descname"><span class="pre">--experiment-id</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;experiment_id&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-recurring-run-create-experiment-id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The string id of an experiment. Either –experiment-id or –experiment-name is required.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-recurring-run-create-experiment-name">
+<span class="sig-name descname"><span class="pre">--experiment-name</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;experiment_name&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-recurring-run-create-experiment-name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the experiment to create the recurring run under. Either –experiment-id or –experiment-name is required.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-recurring-run-create-job-name">
+<span class="sig-name descname"><span class="pre">--job-name</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;job_name&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-recurring-run-create-job-name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of the job.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-recurring-run-create-interval-second">
+<span class="sig-name descname"><span class="pre">--interval-second</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;interval_second&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-recurring-run-create-interval-second" title="Permalink to this definition">¶</a></dt>
+<dd><p>Integer indicating the seconds between two recurring runs in for a periodic schedule.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-recurring-run-create-max-concurrency">
+<span class="sig-name descname"><span class="pre">--max-concurrency</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;max_concurrency&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-recurring-run-create-max-concurrency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Integer indicating how many jobs can be run in parallel.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-recurring-run-create-pipeline-id">
+<span class="sig-name descname"><span class="pre">--pipeline-id</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;pipeline_id&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-recurring-run-create-pipeline-id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The id of a pipeline.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-recurring-run-create-pipeline-package-path">
+<span class="sig-name descname"><span class="pre">--pipeline-package-path</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;pipeline_package_path&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-recurring-run-create-pipeline-package-path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Local path of the pipeline package (the filename should end with one of the following .tar.gz, .tgz, .zip, .json).</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-recurring-run-create-start-time">
+<span class="sig-name descname"><span class="pre">--start-time</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;start_time&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-recurring-run-create-start-time" title="Permalink to this definition">¶</a></dt>
+<dd><p>The RFC3339 time string of the time when to start the job.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-recurring-run-create-version-id">
+<span class="sig-name descname"><span class="pre">--version-id</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;version_id&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-recurring-run-create-version-id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The id of a pipeline version.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-recurring-run-create-arg-ARGS">
+<span id="cmdoption-kfp-recurring-run-create-arg-args"></span><span class="sig-name descname"><span class="pre">ARGS</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-recurring-run-create-arg-ARGS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optional argument(s)</p>
+</dd></dl>
+
+<h4 id="kfp-recurring-run-delete">delete<a class="headerlink" href="#kfp-recurring-run-delete" title="Permalink to this heading">¶</a></h4>
+<p>Delete a recurring run.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp recurring-run delete <span class="o">[</span>OPTIONS<span class="o">]</span> JOB_ID
+</code></pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-recurring-run-delete-arg-JOB_ID">
+<span id="cmdoption-kfp-recurring-run-delete-arg-job-id"></span><span class="sig-name descname"><span class="pre">JOB_ID</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-recurring-run-delete-arg-JOB_ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+<h4 id="kfp-recurring-run-disable">disable<a class="headerlink" href="#kfp-recurring-run-disable" title="Permalink to this heading">¶</a></h4>
+<p>Disable a recurring run.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp recurring-run disable <span class="o">[</span>OPTIONS<span class="o">]</span> JOB_ID
+</code></pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-recurring-run-disable-arg-JOB_ID">
+<span id="cmdoption-kfp-recurring-run-disable-arg-job-id"></span><span class="sig-name descname"><span class="pre">JOB_ID</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-recurring-run-disable-arg-JOB_ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+<h4 id="kfp-recurring-run-enable">enable<a class="headerlink" href="#kfp-recurring-run-enable" title="Permalink to this heading">¶</a></h4>
+<p>Enable a recurring run.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp recurring-run <span class="nb">enable</span> <span class="o">[</span>OPTIONS<span class="o">]</span> JOB_ID
+</code></pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-recurring-run-enable-arg-JOB_ID">
+<span id="cmdoption-kfp-recurring-run-enable-arg-job-id"></span><span class="sig-name descname"><span class="pre">JOB_ID</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-recurring-run-enable-arg-JOB_ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+<h4 id="kfp-recurring-run-get">get<a class="headerlink" href="#kfp-recurring-run-get" title="Permalink to this heading">¶</a></h4>
+<p>Get information about a recurring run.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp recurring-run get <span class="o">[</span>OPTIONS<span class="o">]</span> JOB_ID
+</code></pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-recurring-run-get-arg-JOB_ID">
+<span id="cmdoption-kfp-recurring-run-get-arg-job-id"></span><span class="sig-name descname"><span class="pre">JOB_ID</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-recurring-run-get-arg-JOB_ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+<h4 id="kfp-recurring-run-list">list<a class="headerlink" href="#kfp-recurring-run-list" title="Permalink to this heading">¶</a></h4>
+<p>List recurring runs.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp recurring-run list <span class="o">[</span>OPTIONS<span class="o">]</span>
+</code></pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-recurring-run-list-e">
+<span id="cmdoption-kfp-recurring-run-list-experiment-id"></span><span class="sig-name descname"><span class="pre">-e</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--experiment-id</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;experiment_id&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-recurring-run-list-e" title="Permalink to this definition">¶</a></dt>
+<dd><p>Experiment id to filter upon.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-recurring-run-list-page-token">
+<span class="sig-name descname"><span class="pre">--page-token</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;page_token&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-recurring-run-list-page-token" title="Permalink to this definition">¶</a></dt>
+<dd><p>Token for starting of the page.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-recurring-run-list-m">
+<span id="cmdoption-kfp-recurring-run-list-max-size"></span><span class="sig-name descname"><span class="pre">-m</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--max-size</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;max_size&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-recurring-run-list-m" title="Permalink to this definition">¶</a></dt>
+<dd><p>Size of the page.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-recurring-run-list-sort-by">
+<span class="sig-name descname"><span class="pre">--sort-by</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;sort_by&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-recurring-run-list-sort-by" title="Permalink to this definition">¶</a></dt>
+<dd><p>One of ‘field_name’, ‘field_name desc’. For example, ‘name desc’.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-recurring-run-list-filter">
+<span class="sig-name descname"><span class="pre">--filter</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;filter&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-recurring-run-list-filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>A url-encoded, JSON-serialized Filter protocol buffer (see [filter.proto](<a class="reference external" href="https://github.com/kubeflow/pipelines/blob/master/backend/api/filter.proto">https://github.com/kubeflow/pipelines/blob/master/backend/api/filter.proto</a>)).</p>
+</dd></dl>
+
+<h3 id="kfp-run">run<a class="headerlink" href="#kfp-run" title="Permalink to this heading">¶</a></h3>
+<p>Manage run resources.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp run <span class="o">[</span>OPTIONS<span class="o">]</span> COMMAND <span class="o">[</span>ARGS<span class="o">]</span>...
+</code></pre></div>
+</div>
+<h4 id="kfp-run-archive">archive<a class="headerlink" href="#kfp-run-archive" title="Permalink to this heading">¶</a></h4>
+<p>Archive a pipeline run.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp run archive <span class="o">[</span>OPTIONS<span class="o">]</span> RUN_ID
+</code></pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-run-archive-arg-RUN_ID">
+<span id="cmdoption-kfp-run-archive-arg-run-id"></span><span class="sig-name descname"><span class="pre">RUN_ID</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-run-archive-arg-RUN_ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+<h4 id="kfp-run-create">create<a class="headerlink" href="#kfp-run-create" title="Permalink to this heading">¶</a></h4>
+<p>Submit a pipeline run.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp run create <span class="o">[</span>OPTIONS<span class="o">]</span> <span class="o">[</span>ARGS<span class="o">]</span>...
+</code></pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-run-create-e">
+<span id="cmdoption-kfp-run-create-experiment-name"></span><span class="sig-name descname"><span class="pre">-e</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--experiment-name</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;experiment_name&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-run-create-e" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Required</strong> Experiment name of the run.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-run-create-r">
+<span id="cmdoption-kfp-run-create-run-name"></span><span class="sig-name descname"><span class="pre">-r</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--run-name</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;run_name&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-run-create-r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of the job.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-run-create-f">
+<span id="cmdoption-kfp-run-create-package-file"></span><span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--package-file</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;package_file&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-run-create-f" title="Permalink to this definition">¶</a></dt>
+<dd><p>Local path of the pipeline package (the filename should end with one of the following .tar.gz, .tgz, .zip, .json).</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-run-create-p">
+<span id="cmdoption-kfp-run-create-pipeline-id"></span><span class="sig-name descname"><span class="pre">-p</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--pipeline-id</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;pipeline_id&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-run-create-p" title="Permalink to this definition">¶</a></dt>
+<dd><p>The id of a pipeline.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-run-create-n">
+<span id="cmdoption-kfp-run-create-pipeline-name"></span><span class="sig-name descname"><span class="pre">-n</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--pipeline-name</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;pipeline_name&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-run-create-n" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of the pipeline template.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-run-create-w">
+<span id="cmdoption-kfp-run-create-watch"></span><span class="sig-name descname"><span class="pre">-w</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--watch</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-run-create-w" title="Permalink to this definition">¶</a></dt>
+<dd><p>Watch the run status until it finishes.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-run-create-v">
+<span id="cmdoption-kfp-run-create-version"></span><span class="sig-name descname"><span class="pre">-v</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--version</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;version&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-run-create-v" title="Permalink to this definition">¶</a></dt>
+<dd><p>The id of a pipeline version. If both pipeline_id and version_id are specified, version_id will take precendence. If only pipeline_id is specified, the default version of this pipeline is used to create the run.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-run-create-t">
+<span id="cmdoption-kfp-run-create-timeout"></span><span class="sig-name descname"><span class="pre">-t</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--timeout</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;timeout&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-run-create-t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wait for a run to complete until timeout in seconds.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-run-create-arg-ARGS">
+<span id="cmdoption-kfp-run-create-arg-args"></span><span class="sig-name descname"><span class="pre">ARGS</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-run-create-arg-ARGS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optional argument(s)</p>
+</dd></dl>
+
+<h4 id="kfp-run-delete">delete<a class="headerlink" href="#kfp-run-delete" title="Permalink to this heading">¶</a></h4>
+<p>Delete a pipeline run.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp run delete <span class="o">[</span>OPTIONS<span class="o">]</span> RUN_ID
+</code></pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-run-delete-arg-RUN_ID">
+<span id="cmdoption-kfp-run-delete-arg-run-id"></span><span class="sig-name descname"><span class="pre">RUN_ID</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-run-delete-arg-RUN_ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+<h4 id="kfp-run-get">get<a class="headerlink" href="#kfp-run-get" title="Permalink to this heading">¶</a></h4>
+<p>Get information about a pipeline run.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp run get <span class="o">[</span>OPTIONS<span class="o">]</span> RUN_ID
+</code></pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-run-get-w">
+<span id="cmdoption-kfp-run-get-watch"></span><span class="sig-name descname"><span class="pre">-w</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--watch</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-run-get-w" title="Permalink to this definition">¶</a></dt>
+<dd><p>Watch the run status until it finishes.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-run-get-d">
+<span id="cmdoption-kfp-run-get-detail"></span><span class="sig-name descname"><span class="pre">-d</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--detail</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-run-get-d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get detailed information of the run in json format.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-run-get-arg-RUN_ID">
+<span id="cmdoption-kfp-run-get-arg-run-id"></span><span class="sig-name descname"><span class="pre">RUN_ID</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-run-get-arg-RUN_ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+<h4 id="kfp-run-list">list<a class="headerlink" href="#kfp-run-list" title="Permalink to this heading">¶</a></h4>
+<p>List pipeline runs.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp run list <span class="o">[</span>OPTIONS<span class="o">]</span>
+</code></pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-run-list-e">
+<span id="cmdoption-kfp-run-list-experiment-id"></span><span class="sig-name descname"><span class="pre">-e</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--experiment-id</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;experiment_id&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-run-list-e" title="Permalink to this definition">¶</a></dt>
+<dd><p>Experiment id to filter upon</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-run-list-page-token">
+<span class="sig-name descname"><span class="pre">--page-token</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;page_token&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-run-list-page-token" title="Permalink to this definition">¶</a></dt>
+<dd><p>Token for starting of the page.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-run-list-m">
+<span id="cmdoption-kfp-run-list-max-size"></span><span class="sig-name descname"><span class="pre">-m</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--max-size</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;max_size&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-run-list-m" title="Permalink to this definition">¶</a></dt>
+<dd><p>Size of the page.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-run-list-sort-by">
+<span class="sig-name descname"><span class="pre">--sort-by</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;sort_by&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-run-list-sort-by" title="Permalink to this definition">¶</a></dt>
+<dd><p>One of ‘field_name’, ‘field_name desc’. For example, ‘name desc’.</p>
+</dd></dl>
+
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-run-list-filter">
+<span class="sig-name descname"><span class="pre">--filter</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;filter&gt;</span></span><a class="headerlink" href="#cmdoption-kfp-run-list-filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>A url-encoded, JSON-serialized Filter protocol buffer (see [filter.proto](<a class="reference external" href="https://github.com/kubeflow/pipelines/blob/master/backend/api/filter.proto">https://github.com/kubeflow/pipelines/blob/master/backend/api/filter.proto</a>)).</p>
+</dd></dl>
+
+<h4 id="kfp-run-unarchive">unarchive<a class="headerlink" href="#kfp-run-unarchive" title="Permalink to this heading">¶</a></h4>
+<p>Unarchive a pipeline run.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>kfp run unarchive <span class="o">[</span>OPTIONS<span class="o">]</span> RUN_ID
+</code></pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<dl class="std option objdesc">
+<dt class="sig sig-object highlight std" id="cmdoption-kfp-run-unarchive-arg-RUN_ID">
+<span id="cmdoption-kfp-run-unarchive-arg-run-id"></span><span class="sig-name descname"><span class="pre">RUN_ID</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-kfp-run-unarchive-arg-RUN_ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="registry.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: kfp.registry" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              kfp.registry
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  
+  
+  <div class="md-footer-meta md-typeset">
+    
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-footer-copyright__highlight">
+        &#169; Copyright 2022, The Kubeflow Authors.
+        
+    </div>
+  
+    Created using
+    <a href="https://www.sphinx-doc.org/" target="_blank" rel="noopener">Sphinx</a>
+    5.0.2.
+     and
+    <a href="https://github.com/jbms/sphinx-immaterial/" target="_blank" rel="noopener">Sphinx-Immaterial</a>
+  
+</div>
+      
+    </div>
+    
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.sections", "navigation.top", "search.highlight", "search.share", "toc.follow", "toc.sticky"], "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike", "staticVersions": [{"aliases": [], "title": "v2.0.0b1", "version": "file:///Users/cjmccarthy/workspace/pipelines/docs/_build/html/index.html#"}, {"aliases": [], "title": "v1.8.13", "version": "https://kubeflow-pipelines.readthedocs.io/en/stable/"}], "versionPath": null}}</script>
+    
+    
+      <script src="../_static/javascripts/bundle.dc1bded0.min.js"></script>
+    
+  </body>
+</html>
