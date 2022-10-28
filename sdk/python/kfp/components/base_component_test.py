@@ -52,7 +52,8 @@ component_op = TestComponent(
             'input3':
                 structures.InputSpec(type='Float', default=3.14),
             'input4':
-                structures.InputSpec(type='Optional[Float]', default=None),
+                structures.InputSpec(
+                    type='Optional[Float]', default=None, optional=True),
         },
         outputs={
             'output1': structures.OutputSpec(type='String'),

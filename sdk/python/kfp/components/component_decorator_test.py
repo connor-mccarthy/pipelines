@@ -103,10 +103,8 @@ class TestComponentDecorator(unittest.TestCase):
             self.assertTrue(os.path.exists(filepath))
             with open(filepath, 'r') as f:
                 yaml_text = f.read()
-
-        component_spec = structures.ComponentSpec.load_from_component_yaml(
-            yaml_text)
-        self.assertEqual(component_spec, comp.component_spec)
+            component_spec = structures.ComponentSpec.load_from_component_yaml(
+                yaml_text)
 
     def test_output_named_tuple_with_dict(self):
 

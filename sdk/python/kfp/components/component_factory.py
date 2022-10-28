@@ -229,7 +229,7 @@ def extract_component_interface(
                     input_spec = structures.InputSpec(
                         type=type_struct,
                         default=parameter.default,
-                    )
+                        optional=True)
                 else:
                     input_spec = structures.InputSpec(type=type_struct,)
 
@@ -365,7 +365,7 @@ def _get_command_and_args_for_containerized_component(
 
     args = [
         '--executor_input',
-        placeholders.ExecutorInputPlaceholder()._to_placeholder_string(),
+        placeholders.ExecutorInputPlaceholder().to_string(),
         '--function_to_execute',
         function_name,
     ]

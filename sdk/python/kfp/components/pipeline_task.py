@@ -74,6 +74,7 @@ class PipelineTask:
 
         self.parent_task_group: Union[None, TasksGroup] = None
         args = args or {}
+        # self._check_all_required_args_provided(component_spec, args)
 
         for input_name, argument_value in args.items():
 
@@ -129,10 +130,8 @@ class PipelineTask:
         self.pipeline_spec = None
 
         if component_spec.implementation.container is not None:
-            self.container_spec = self._resolve_command_line_and_arguments(
-                component_spec=component_spec,
-                args=args,
-            )
+            self.container_spec = self._extract_container_spec_and_convert_placeholders(
+                component_spec=component_spec)
         elif component_spec.implementation.importer is not None:
             self.importer_spec = component_spec.implementation.importer
             self.importer_spec.artifact_uri = args['uri']
@@ -208,141 +207,46 @@ class PipelineTask:
         """A list of the dependent task names."""
         return self._task_spec.dependent_tasks
 
-    def _resolve_command_line_and_arguments(
+    def _check_all_required_args_provided(
         self,
         component_spec: structures.ComponentSpec,
         args: Mapping[str, str],
+    ):
+
+        required_inputs = {
+            input_name
+            for input_name, input_spec in (component_spec.inputs or {}).items()
+            if not (input_spec.optional or input_spec.default or
+                    input_spec.type == 'PipelineTaskFinalStatus')
+        }
+
+        provided_inputs = set(args)
+        missing_args = required_inputs - provided_inputs
+        if missing_args:
+            raise ValueError(
+                f'No value provided for input(s): {", ".join(list(missing_args))}.'
+            )
+
+    def _extract_container_spec_and_convert_placeholders(
+        self, component_spec: structures.ComponentSpec
     ) -> structures.ContainerSpecImplementation:
-        """Resolves the command line argument placeholders in a
-        ContainerSpecImplementation.
+        """Extracts a ContainerSpec from a ComponentSpec and converts
+        placeholders to strings.
 
         Args:
             component_spec: The component definition.
             args: The dictionary of component arguments.
         """
-        argument_values = args
-
-        component_inputs = component_spec.inputs or {}
-        inputs_dict = {
-            input_name: input_spec
-            for input_name, input_spec in component_inputs.items()
-        }
-        component_outputs = component_spec.outputs or {}
-        outputs_dict = {
-            output_name: output_spec
-            for output_name, output_spec in component_outputs.items()
-        }
-
-        def check_input_type_and_convert_to_placeholder(
-                arg) -> Union[str, List[str], None]:
-            # TODO: separate input type-checking logic from placeholder-conversion/.to_placeholder() logic
-            if arg is None:
-                return None
-
-            elif isinstance(arg, (str, int, float, bool)):
-                return str(arg)
-
-            elif isinstance(arg, placeholders.InputValuePlaceholder):
-                input_name = arg.input_name
-                if not type_utils.is_parameter_type(
-                        inputs_dict[input_name].type):
-                    raise TypeError(
-                        f'Input "{input_name}" with type '
-                        f'"{inputs_dict[input_name].type}" cannot be paired with '
-                        'InputValuePlaceholder.')
-                if input_name in args or type_utils.is_task_final_status_type(
-                        inputs_dict[input_name].type):
-                    return arg._to_placeholder_string()
-                input_spec = inputs_dict[input_name]
-                if input_spec.default is None:
-                    raise ValueError(
-                        f'No value provided for input: {input_name}.')
-                else:
-                    return arg._to_placeholder_string()
-
-            elif isinstance(arg, placeholders.InputUriPlaceholder):
-                input_name = arg.input_name
-                if type_utils.is_parameter_type(inputs_dict[input_name].type):
-                    raise TypeError(
-                        f'Input "{input_name}" with type '
-                        f'"{inputs_dict[input_name].type}" cannot be paired with '
-                        'InputUriPlaceholder.')
-
-                if input_name in args:
-                    return arg._to_placeholder_string()
-                input_spec = inputs_dict[input_name]
-                if input_spec.default is None:
-                    raise ValueError(
-                        f'No value provided for input: {input_name}.')
-
-                else:
-                    return None
-
-            elif isinstance(arg, placeholders.InputPathPlaceholder):
-                input_name = arg.input_name
-                if type_utils.is_parameter_type(inputs_dict[input_name].type):
-                    raise TypeError(
-                        f'Input "{input_name}" with type '
-                        f'"{inputs_dict[input_name].type}" cannot be paired with '
-                        'InputPathPlaceholder.')
-
-                if input_name in args:
-                    return arg._to_placeholder_string()
-                input_spec = inputs_dict[input_name]
-                if input_spec._optional:
-                    return None
-                else:
-                    raise ValueError(
-                        f'No value provided for input: {input_name}.')
-
-            elif isinstance(arg, placeholders.OutputUriPlaceholder):
-                output_name = arg.output_name
-                if type_utils.is_parameter_type(outputs_dict[output_name].type):
-                    raise TypeError(
-                        f'Onput "{output_name}" with type '
-                        f'"{outputs_dict[output_name].type}" cannot be paired with '
-                        'OutputUriPlaceholder.')
-
-                return arg._to_placeholder_string()
-
-            elif isinstance(arg, (placeholders.OutputPathPlaceholder,
-                                  placeholders.OutputParameterPlaceholder)):
-                output_name = arg.output_name
-                return placeholders.OutputParameterPlaceholder(
-                    arg.output_name)._to_placeholder_string(
-                    ) if type_utils.is_parameter_type(
-                        outputs_dict[output_name].type
-                    ) else placeholders.OutputPathPlaceholder(
-                        arg.output_name)._to_placeholder_string()
-
-            elif isinstance(arg, placeholders.Placeholder):
-                return arg._to_placeholder_string()
-
-            else:
-                raise TypeError(f'Unrecognized argument type: {arg}.')
-
-        def expand_argument_list(argument_list) -> Optional[List[str]]:
-            if argument_list is None:
-                return None
-
-            expanded_list = []
-            for part in argument_list:
-                expanded_part = check_input_type_and_convert_to_placeholder(
-                    part)
-                if expanded_part is not None:
-                    if isinstance(expanded_part, list):
-                        expanded_list.extend(expanded_part)
-                    else:
-                        expanded_list.append(str(expanded_part))
-            return expanded_list
-
-        container_spec = component_spec.implementation.container
-        resolved_container_spec = copy.deepcopy(container_spec)
-        resolved_container_spec.command = expand_argument_list(
-            container_spec.command)
-        resolved_container_spec.args = expand_argument_list(container_spec.args)
-
-        return resolved_container_spec
+        container_spec = copy.deepcopy(component_spec.implementation.container)
+        container_spec.command = [
+            placeholders.convert_command_line_element_to_string(e)
+            for e in container_spec.command or []
+        ]
+        container_spec.args = [
+            placeholders.convert_command_line_element_to_string(e)
+            for e in container_spec.args or []
+        ]
+        return container_spec
 
     def set_caching_options(self, enable_caching: bool) -> 'PipelineTask':
         """Sets caching options for the task.
