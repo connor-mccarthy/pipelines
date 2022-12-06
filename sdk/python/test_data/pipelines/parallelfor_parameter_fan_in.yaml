@@ -1,0 +1,133 @@
+# PIPELINE DEFINITION
+# Name: my-pipeline
+# Inputs:
+#    nums: list [Default: [1.0, 2.0, 3.0]]
+components:
+  comp-double:
+    executorLabel: exec-double
+    inputDefinitions:
+      parameters:
+        num:
+          parameterType: NUMBER_INTEGER
+    outputDefinitions:
+      parameters:
+        Output:
+          parameterType: NUMBER_INTEGER
+  comp-for-loop-1:
+    dag:
+      tasks:
+        double:
+          cachingOptions:
+            enableCache: true
+          componentRef:
+            name: comp-double
+          inputs:
+            parameters:
+              num:
+                componentInputParameter: pipelinechannel--nums-loop-item
+          taskInfo:
+            name: double
+    inputDefinitions:
+      parameters:
+        pipelinechannel--nums:
+          parameterType: LIST
+        pipelinechannel--nums-loop-item:
+          parameterType: NUMBER_INTEGER
+  comp-print-list-of-nums:
+    executorLabel: exec-print-list-of-nums
+    inputDefinitions:
+      parameters:
+        nums:
+          parameterType: LIST
+deploymentSpec:
+  executors:
+    exec-double:
+      container:
+        args:
+        - --executor_input
+        - '{{$}}'
+        - --function_to_execute
+        - double
+        command:
+        - sh
+        - -c
+        - "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip ||\
+          \ python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1\
+          \ python3 -m pip install --quiet     --no-warn-script-location 'kfp==2.0.0-beta.8'\
+          \ && \"$0\" \"$@\"\n"
+        - sh
+        - -ec
+        - 'program_path=$(mktemp -d)
+
+          printf "%s" "$0" > "$program_path/ephemeral_component.py"
+
+          python3 -m kfp.components.executor_main                         --component_module_path                         "$program_path/ephemeral_component.py"                         "$@"
+
+          '
+        - "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import\
+          \ *\n\ndef double(num: int) -> int:\n    return 2 * num\n\n"
+        image: python:3.7
+    exec-print-list-of-nums:
+      container:
+        args:
+        - --executor_input
+        - '{{$}}'
+        - --function_to_execute
+        - print_list_of_nums
+        command:
+        - sh
+        - -c
+        - "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip ||\
+          \ python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1\
+          \ python3 -m pip install --quiet     --no-warn-script-location 'kfp==2.0.0-beta.8'\
+          \ && \"$0\" \"$@\"\n"
+        - sh
+        - -ec
+        - 'program_path=$(mktemp -d)
+
+          printf "%s" "$0" > "$program_path/ephemeral_component.py"
+
+          python3 -m kfp.components.executor_main                         --component_module_path                         "$program_path/ephemeral_component.py"                         "$@"
+
+          '
+        - "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import\
+          \ *\n\ndef print_list_of_nums(nums: List[int]) -> None:\n    print(nums)\n\
+          \n"
+        image: python:3.7
+pipelineInfo:
+  name: my-pipeline
+root:
+  dag:
+    tasks:
+      for-loop-1:
+        componentRef:
+          name: comp-for-loop-1
+        inputs:
+          parameters:
+            pipelinechannel--nums:
+              componentInputParameter: nums
+        parameterIterator:
+          itemInput: pipelinechannel--nums-loop-item
+          items:
+            inputParameter: pipelinechannel--nums
+        taskInfo:
+          name: for-loop-1
+      print-list-of-nums:
+        cachingOptions:
+          enableCache: true
+        componentRef:
+          name: comp-print-list-of-nums
+        dependentTasks:
+        - for-loop-1
+        taskInfo:
+          name: print-list-of-nums
+  inputDefinitions:
+    parameters:
+      nums:
+        defaultValue:
+        - 1.0
+        - 2.0
+        - 3.0
+        parameterType: LIST
+schemaVersion: 2.1.0
+sdkVersion: kfp-2.0.0-beta.8

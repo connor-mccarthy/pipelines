@@ -278,3 +278,46 @@ class LoopArgumentVariable(pipeline_channel.PipelineChannel):
             The name of this loop arg variable.
         """
         return f'{loop_arg_name}{self.SUBVAR_NAME_DELIMITER}{subvar_name}'
+
+
+# TODO: merge with similar function
+def _additional_input_name_for_pipeline_channel(
+        channel_or_name: Union[pipeline_channel.PipelineChannel, str]) -> str:
+    """Gets the name for an additional (compiler-injected) input."""
+
+    # Adding a prefix to avoid (reduce chance of) name collision between the
+    # original component inputs and the injected input.
+    return 'pipelinechannel--' + (
+        channel_or_name.full_name if isinstance(
+            channel_or_name, pipeline_channel.PipelineChannel) else
+        channel_or_name)
+
+
+class Collected(pipeline_channel.PipelineChannel):
+    """Used for collecting outputs from tasks created within a dsl.ParallelFor loop.
+    Args:
+        output: The output from a task created in a dsl.ParallelFor loop that you wish to collect.
+
+    Example:
+      ::
+
+        @dsl.pipeline
+        def my_pipeline(frameworks: List[str]):
+            with dsl.ParallelFor(frameworks) as framework:
+                model_task = train_model(framework=framework)
+            best_model_task = select_best(
+                models=dsl.Collected(model_task.outputs['model']))
+    """
+
+    # TODO: position only?
+    def __init__(self, output: pipeline_channel.PipelineChannel) -> None:
+        # TODO: handle artifact channel
+        self._output = output
+        # set task name to parallelfor dag
+        # self._output.task_name
+        task_name = 'for-loop-1'
+        super().__init__(
+            name=f'pipelinechannel--{self._output.full_name}',
+            task_name=self._output.task_name,
+            channel_type='List',
+        )

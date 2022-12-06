@@ -433,21 +433,22 @@ def get_dependencies(
             uncommon_upstream_groups.remove(
                 upstream_task.name
             )  # because a task's `upstream_groups` contains the task's name
-            if uncommon_upstream_groups:
-                dependent_group = group_name_to_group.get(
-                    uncommon_upstream_groups[0], None)
-                if isinstance(dependent_group, tasks_group.ExitHandler):
-                    task_group_type = 'an ' + tasks_group.ExitHandler.__name__
+            # TODO: update this
+            # if uncommon_upstream_groups:
+            #     dependent_group = group_name_to_group.get(
+            #         uncommon_upstream_groups[0], None)
+            #     if isinstance(dependent_group, tasks_group.ExitHandler):
+            #         task_group_type = 'an ' + tasks_group.ExitHandler.__name__
 
-                elif isinstance(dependent_group, tasks_group.Condition):
-                    task_group_type = 'a ' + tasks_group.Condition.__name__
+            #     elif isinstance(dependent_group, tasks_group.Condition):
+            #         task_group_type = 'a ' + tasks_group.Condition.__name__
 
-                else:
-                    task_group_type = 'a ' + tasks_group.ParallelFor.__name__
+            #     else:
+            #         task_group_type = 'a ' + tasks_group.ParallelFor.__name__
 
-                raise RuntimeError(
-                    f'Tasks cannot depend on an upstream task inside {task_group_type} that is not a common ancestor of both tasks. Task {task.name} depends on upstream task {upstream_task.name}.'
-                )
+            #     raise RuntimeError(
+            #         f'Tasks cannot depend on an upstream task inside {task_group_type} that is not a common ancestor of both tasks. Task {task.name} depends on upstream task {upstream_task.name}.'
+            #     )
 
             # ParralelFor Nested Check
             # if there is a parrallelFor group type in the upstream parents tasks and there also exists a parallelFor in the uncommon_ancestors of downstream: this means a nested for loop exists in the DAG

@@ -170,6 +170,21 @@ def build_task_spec_for_task(
                     input_name].component_input_artifact = (
                         component_input_artifact)
 
+        elif isinstance(input_value, for_loop.Collected):
+            # should be enforced by Collected instance, with error message there
+            if input_value.task_name in tasks_in_current_dag:
+                if input_value.task_name in tasks_in_current_dag:
+                    # Dependent task within the same DAG.
+                    pipeline_task_spec.inputs.parameters[
+                        input_name].task_output_parameter.producer_task = (
+                            utils.sanitize_task_name(input_value.task_name))
+                    pipeline_task_spec.inputs.parameters[
+                        input_name].task_output_parameter.output_parameter_key = (
+                            input_value.name)
+
+            # assert input_value.task_name
+            # print(input_value.task_name)
+            # print(tasks_in_current_dag)
         elif isinstance(input_value, pipeline_channel.PipelineParameterChannel):
 
             if input_value.task_name:
@@ -966,6 +981,9 @@ def build_task_spec_for_group(
                             channel_full_name))
 
     if isinstance(group, tasks_group.ParallelFor):
+        # NEXT: ParallelFor group outputs need to be updated to pass outputs from inner tasks
+        # NEXT: print-list-of-nums inputs need to be specified
+        # google.api_core.exceptions.InvalidArgument: 400 Task 'print-list-of-nums' does not have bindings for all input parameters for component 'comp-print-list-of-nums'.
         _update_task_spec_for_loop_group(
             group=group,
             pipeline_task_spec=pipeline_task_spec,
@@ -1188,7 +1206,7 @@ def build_spec_by_group(
             # arguments which will be handled separately) needed by its
             # subgroups or tasks.
             loop_subgroup_channels = []
-
+            # TODO: skip!
             for channel in subgroup_channels:
                 # Skip 'withItems' loop arguments if it's from an inner loop.
                 if isinstance(

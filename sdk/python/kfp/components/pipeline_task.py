@@ -74,9 +74,10 @@ class PipelineTask:
     ):
         """Initilizes a PipelineTask instance."""
         # import within __init__ to avoid circular import
-        from kfp.components.tasks_group import TasksGroup
+        from kfp.components import tasks_group
 
-        self.parent_task_group: Union[None, TasksGroup] = None
+        self.parent_task_group: Union[None, tasks_group.TasksGroup] = None
+
         args = args or {}
 
         for input_name, argument_value in args.items():
