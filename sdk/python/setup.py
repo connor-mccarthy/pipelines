@@ -75,6 +75,8 @@ setuptools.setup(
     install_requires=get_requirements('requirements.in'),
     extras_require={
         'all': ['docker'],
+        # used for testing only
+        'deprecated': get_requirements('requirements-deprecated.in'),
     },
     packages=setuptools.find_packages(exclude=['*test*']),
     classifiers=[
