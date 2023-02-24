@@ -52,6 +52,11 @@ class YamlComponent(components.BaseComponent):
             return json_format.ParseDict(component_dict,
                                          pipeline_spec_pb2.PipelineSpec())
 
+    # TODO: make abstract property?
+    @property
+    def platform_spec(self) -> dict:
+        return self.component_spec.platform_spec
+
     def execute(self, *args, **kwargs):
         """Not implemented."""
         raise NotImplementedError
@@ -66,9 +71,11 @@ def load_component_from_text(text: str) -> YamlComponent:
     Returns:
         Component loaded from YAML.
     """
+    component_spec = structures.ComponentSpec.from_yaml_documents(text)
     return YamlComponent(
-        component_spec=structures.ComponentSpec.load_from_component_yaml(text),
-        component_yaml=text)
+        component_spec=component_spec,
+        component_yaml=text,
+    )
 
 
 def load_component_from_file(file_path: str) -> YamlComponent:

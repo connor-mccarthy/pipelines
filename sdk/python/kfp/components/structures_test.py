@@ -246,7 +246,7 @@ class StructuresTest(parameterized.TestCase):
             # test that it can be read back correctly
             with open(output_path, 'r') as f:
                 contents = f.read()
-            new_component_spec = structures.ComponentSpec.load_from_component_yaml(
+            new_component_spec = structures.ComponentSpec.from_yaml_documents(
                 contents)
 
         self.assertEqual(original_component_spec, new_component_spec)
@@ -301,7 +301,7 @@ schemaVersion: 2.1.0
 sdkVersion: kfp-2.0.0-alpha.2
         """)
 
-        generated_spec = structures.ComponentSpec.load_from_component_yaml(
+        generated_spec = structures.ComponentSpec.from_yaml_documents(
             component_yaml_v2)
 
         expected_spec = structures.ComponentSpec(
@@ -342,7 +342,7 @@ sdkVersion: kfp-2.0.0-alpha.2
     )
     def test_component_spec_placeholder_load_from_v2_component_yaml(
             self, yaml, expected_component):
-        generated_spec = structures.ComponentSpec.load_from_component_yaml(yaml)
+        generated_spec = structures.ComponentSpec.from_yaml_documents(yaml)
         self.assertEqual(generated_spec, expected_component)
 
     def test_component_spec_load_from_v1_component_yaml(self):
@@ -371,7 +371,7 @@ sdkVersion: kfp-2.0.0-alpha.2
             - {outputPath: Output 2}
         """)
 
-        generated_spec = structures.ComponentSpec.load_from_component_yaml(
+        generated_spec = structures.ComponentSpec.from_yaml_documents(
             component_yaml_v1)
 
         expected_spec = structures.ComponentSpec(
@@ -622,7 +622,7 @@ V1_YAML = textwrap.dedent("""\
 class TestReadInComponent(parameterized.TestCase):
 
     def test_read_v1(self):
-        component_spec = structures.ComponentSpec.load_from_component_yaml(
+        component_spec = structures.ComponentSpec.from_yaml_documents(
             V1_YAML_IF_PLACEHOLDER)
         self.assertEqual(component_spec.name, 'component-if')
         self.assertEqual(component_spec.implementation.container.image,
@@ -677,7 +677,7 @@ root:
         parameterType: STRING
 schemaVersion: 2.1.0
 sdkVersion: kfp-2.0.0-alpha.2""")
-        loaded_component_spec = structures.ComponentSpec.load_from_component_yaml(
+        loaded_component_spec = structures.ComponentSpec.from_yaml_documents(
             compiled_yaml)
         component_spec = structures.ComponentSpec(
             name='component1',
@@ -745,7 +745,7 @@ root:
         parameterType: STRING
 schemaVersion: 2.1.0
 sdkVersion: kfp-2.0.0-alpha.2""")
-        loaded_component_spec = structures.ComponentSpec.load_from_component_yaml(
+        loaded_component_spec = structures.ComponentSpec.from_yaml_documents(
             compiled_yaml)
         component_spec = structures.ComponentSpec(
             name='if',
@@ -816,7 +816,7 @@ root:
         parameterType: STRING
 schemaVersion: 2.1.0
 sdkVersion: kfp-2.0.0-alpha.2""")
-        loaded_component_spec = structures.ComponentSpec.load_from_component_yaml(
+        loaded_component_spec = structures.ComponentSpec.from_yaml_documents(
             compiled_yaml)
         component_spec = structures.ComponentSpec(
             name='concat',

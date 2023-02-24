@@ -30,6 +30,7 @@ from kfp import dsl
 from kfp.cli import cli
 from kfp.compiler import compiler
 from kfp.compiler import compiler_utils
+from kfp.components import pipeline_task
 from kfp.components.types import type_utils
 from kfp.dsl import Artifact
 from kfp.dsl import ContainerSpec
@@ -3178,6 +3179,228 @@ class TestListOfArtifactsInterfaceCompileAndLoad(unittest.TestCase):
         self.assertEqual(
             loaded_component.pipeline_spec.components['comp-python-component']
             .input_definitions.artifacts['input_list'].is_artifact_list, True)
+
+
+def foo_platform_set_bar_feature(task: pipeline_task.PipelineTask,
+                                 val: str) -> pipeline_task.PipelineTask:
+    platform_key = 'platform_foo'
+    feature_key = 'bar'
+
+    platform_struct = task.platform_config.get(platform_key, {})
+    platform_struct[feature_key] = val
+    task.platform_config[platform_key] = platform_struct
+    return task
+
+
+def foo_platform_append_bop_feature(task: pipeline_task.PipelineTask,
+                                    val: str) -> pipeline_task.PipelineTask:
+    platform_key = 'platform_foo'
+    feature_key = 'bop'
+
+    platform_struct = task.platform_config.get(platform_key, {})
+    feature_list = platform_struct.get(feature_key, [])
+    feature_list.append(val)
+    platform_struct[feature_key] = feature_list
+    task.platform_config[platform_key] = platform_struct
+    return task
+
+
+def baz_platform_set_bat_feature(task: pipeline_task.PipelineTask,
+                                 val: str) -> pipeline_task.PipelineTask:
+    platform_key = 'platform_baz'
+    feature_key = 'bat'
+
+    platform_struct = task.platform_config.get(platform_key, {})
+    platform_struct[feature_key] = val
+    task.platform_config[platform_key] = platform_struct
+    return task
+
+
+@dsl.component
+def comp():
+    pass
+
+
+class TestPlatformConfig(unittest.TestCase):
+
+    def test_one_task_one_platform(self):
+
+        @dsl.pipeline
+        def my_pipeline():
+            task = comp()
+            foo_platform_set_bar_feature(task, 12)
+
+        expected = {'platform_foo': {'exec-comp': {'bar': 12}}}
+        self.assertEqual(my_pipeline.platform_spec, expected)
+
+        with tempfile.TemporaryDirectory() as tempdir:
+            output_yaml = os.path.join(tempdir, 'pipeline.yaml')
+            compiler.Compiler().compile(
+                pipeline_func=my_pipeline, package_path=output_yaml)
+            loaded_comp = components.load_component_from_file(output_yaml)
+
+        self.assertEqual(loaded_comp.platform_spec, expected)
+
+    def test_many_tasks_multiple_platforms(self):
+
+        @dsl.pipeline
+        def my_pipeline():
+            task = comp()
+            foo_platform_set_bar_feature(task, 12)
+            foo_platform_append_bop_feature(task, 'element')
+            baz_platform_set_bat_feature(task, 'hello')
+
+        expected = {
+            'platform_foo': {
+                'exec-comp': {
+                    'bar': 12,
+                    'bop': ['element']
+                }
+            },
+            'platform_baz': {
+                'exec-comp': {
+                    'bat': 'hello'
+                }
+            }
+        }
+        self.assertEqual(my_pipeline.platform_spec, expected)
+
+        with tempfile.TemporaryDirectory() as tempdir:
+            output_yaml = os.path.join(tempdir, 'pipeline.yaml')
+            compiler.Compiler().compile(
+                pipeline_func=my_pipeline, package_path=output_yaml)
+            loaded_comp = components.load_component_from_file(output_yaml)
+        self.assertEqual(loaded_comp.platform_spec, expected)
+
+    def test_many_tasks_many_platforms(self):
+
+        @dsl.pipeline
+        def my_pipeline():
+            task1 = comp()
+            foo_platform_set_bar_feature(task1, 12)
+            foo_platform_append_bop_feature(task1, 'element')
+            baz_platform_set_bat_feature(task1, 'hello')
+            task2 = comp()
+            foo_platform_set_bar_feature(task2, 20)
+            foo_platform_append_bop_feature(task2, 'element1')
+            foo_platform_append_bop_feature(task2, 'element2')
+
+        expected = {
+            'platform_foo': {
+                'exec-comp': {
+                    'bar': 12,
+                    'bop': ['element']
+                },
+                'exec-comp-2': {
+                    'bar': 20,
+                    'bop': ['element1', 'element2']
+                }
+            },
+            'platform_baz': {
+                'exec-comp': {
+                    'bat': 'hello'
+                }
+            }
+        }
+
+        self.assertEqual(my_pipeline.platform_spec, expected)
+
+        with tempfile.TemporaryDirectory() as tempdir:
+            output_yaml = os.path.join(tempdir, 'pipeline.yaml')
+            compiler.Compiler().compile(
+                pipeline_func=my_pipeline, package_path=output_yaml)
+            loaded_comp = components.load_component_from_file(output_yaml)
+
+        self.assertEqual(loaded_comp.platform_spec, expected)
+
+    def test_combining_inner_tasks_in_memory(self):
+
+        @dsl.pipeline
+        def pipeline1():
+            task1 = comp()
+            foo_platform_set_bar_feature(task1, 12)
+            foo_platform_append_bop_feature(task1, 'element')
+            baz_platform_set_bat_feature(task1, 'hello')
+
+        @dsl.pipeline
+        def pipeline2():
+            task2 = comp()
+            foo_platform_set_bar_feature(task2, 20)
+            foo_platform_append_bop_feature(task2, 'element1')
+            foo_platform_append_bop_feature(task2, 'element2')
+
+        @dsl.pipeline
+        def my_pipeline():
+            pipeline1()
+            pipeline2()
+            task3 = comp()
+            foo_platform_set_bar_feature(task3, 20)
+            foo_platform_append_bop_feature(task3, 'element1')
+            foo_platform_append_bop_feature(task3, 'element2')
+
+        expected = {
+            'platform_foo': {
+                'exec-comp': {
+                    'bar': 12,
+                    'bop': ['element']
+                },
+                'exec-comp-2': {
+                    'bar': 20,
+                    'bop': ['element1', 'element2']
+                },
+                'exec-comp-3': {
+                    'bar': 20,
+                    'bop': ['element1', 'element2']
+                }
+            },
+            'platform_baz': {
+                'exec-comp': {
+                    'bat': 'hello'
+                }
+            }
+        }
+
+        self.assertEqual(my_pipeline.platform_spec, expected)
+
+        with tempfile.TemporaryDirectory() as tempdir:
+            output_yaml = os.path.join(tempdir, 'pipeline.yaml')
+            compiler.Compiler().compile(
+                pipeline_func=my_pipeline, package_path=output_yaml)
+            loaded_comp = components.load_component_from_file(output_yaml)
+        self.assertEqual(loaded_comp.platform_spec, expected)
+
+    def test_cannot_compile_to_json(self):
+
+        @dsl.pipeline
+        def my_pipeline():
+            task = comp()
+            foo_platform_set_bar_feature(task, 12)
+
+        with self.assertRaisesRegex(
+                ValueError,
+                r"Platform-specific features are only supported when serializing to YAML\. Argument for 'package_path' has file extension '\.json'\."
+        ):
+            with tempfile.TemporaryDirectory() as tempdir:
+                output_yaml = os.path.join(tempdir, 'pipeline.json')
+                compiler.Compiler().compile(
+                    pipeline_func=my_pipeline, package_path=output_yaml)
+
+    def test_cannot_set_platform_specific_config_on_in_memory_pipeline_task(
+            self):
+
+        @dsl.pipeline
+        def inner():
+            task = comp()
+
+        with self.assertRaisesRegex(
+                ValueError,
+                r'Platform\-specific features can only be set on primitive components\. Found platform\-specific feature set on a pipeline\.'
+        ):
+
+            @dsl.pipeline
+            def outer():
+                task = inner()
+                foo_platform_set_bar_feature(task, 12)
 
 
 if __name__ == '__main__':

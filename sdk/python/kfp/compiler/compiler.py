@@ -21,6 +21,7 @@ from typing import Any, Callable, Dict, Optional, Union
 
 from kfp.compiler import pipeline_spec_builder as builder
 from kfp.components import base_component
+from kfp.components import graph_component
 from kfp.components.types import type_utils
 
 
@@ -81,4 +82,7 @@ class Compiler:
             builder.write_pipeline_spec_to_file(
                 pipeline_spec=pipeline_spec,
                 pipeline_description=pipeline_func.description,
-                package_path=package_path)
+                package_path=package_path,
+                platform_spec=pipeline_func.platform_spec if isinstance(
+                    pipeline_func, graph_component.GraphComponent) else None,
+            )

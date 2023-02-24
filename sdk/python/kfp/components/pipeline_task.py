@@ -102,6 +102,8 @@ class PipelineTask:
         self.container_spec = None
         self.pipeline_spec = None
         self._ignore_upstream_failure_tag = False
+        # platform_config for this primtiive task; empty if task is for a graph component
+        self.platform_config = {}
 
         def validate_placeholder_types(
                 component_spec: structures.ComponentSpec) -> None:
@@ -142,6 +144,15 @@ class PipelineTask:
             value for _, value in args.items()
             if not isinstance(value, pipeline_channel.PipelineChannel)
         ])
+
+    @property
+    def platform_spec(self) -> dict:
+        """Platform configs for all tasks, including the inner tasks."""
+        # TODO: remove or test
+        if not self.pipeline_spec:
+            raise ValueError
+        else:
+            return self.component_spec.platform_spec
 
     @property
     def name(self) -> str:
