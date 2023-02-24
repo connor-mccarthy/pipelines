@@ -998,3 +998,21 @@ message PipelineStateEnum {
     UNSCHEDULABLE = 13;
   }
 }
+
+// Spec for all platforms; second document in IR
+message PlatformSpec {
+  // Platform key to full platform config
+  map<string, SinglePlatformSpec> platforms = 1;
+}
+
+message SinglePlatformSpec {
+  // Mirrors PipelineSpec.deployment_spec structure
+  PlatformDeploymentConfig deployment_spec = 1;
+}
+
+
+message PlatformDeploymentConfig {
+  // Map of executor label to task-level config
+  // Mirrors PipelineSpec.deployment_spec.executors structure
+  map<string, google.protobuf.Struct> executors = 1;
+}
