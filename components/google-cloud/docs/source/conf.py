@@ -19,12 +19,14 @@ import re
 # preserve function docstrings for components by setting component decorators to passthrough decorators
 # also enables autodoc to document the components as functions without using the autodata directive (https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html#directive-autodata)
 def container_component_decorator(func):
+    func._is_component = True
     return func
 
 
 def component_decorator(*args, **kwargs):
 
     def decorator(func):
+        func._is_component = True
         return func
 
     return decorator
@@ -157,5 +159,11 @@ def strip_outputs_from_signature(app, what, name, obj, options, signature,
     return signature, return_annotation
 
 
+def example_grouper(app, what, name, obj, section, parent):
+    if getattr(obj, '_is_component', False):
+        return 'Components'
+
+
 def setup(app):
     app.connect('autodoc-process-signature', strip_outputs_from_signature)
+    app.connect('autodocsumm-grouper', example_grouper)
