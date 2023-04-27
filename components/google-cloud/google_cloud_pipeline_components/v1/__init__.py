@@ -11,4 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-"""Google Cloud Pipeline Components corresponding to the v1 Vertex AI API (https://cloud.google.com/vertex-ai/docs/reference#versions)."""
+"""Google Cloud Pipeline Components corresponding to the v1 HII Vertex AI API (https://cloud.google.com/vertex-ai/docs/reference#versions)."""
+from google_cloud_pipeline_components.v1 import bigquery
+
+__all__ = ['bigquery']
