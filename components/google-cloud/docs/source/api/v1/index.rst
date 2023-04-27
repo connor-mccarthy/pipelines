@@ -4,7 +4,7 @@ V1 Components
 .. toctree::
    :maxdepth: 1
 
-   automl
+   automl/index
    batch_predict_job
    bigquery
    custom_job

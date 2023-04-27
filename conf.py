@@ -34,9 +34,10 @@ dsl.component = component_decorator
 dsl.container_component = container_component_decorator
 
 # The short X.Y version
-version = ''
+# update for each release
+VERSION = '2.0.0b2'
 # The full version, including alpha/beta/rc tags
-release = ''
+release = VERSION
 
 # -- General configuration ---------------------------------------------------
 
@@ -60,27 +61,25 @@ autodoc_default_options = {
     'imported-members': True,
     'undoc-members': True,
     'show-inheritance': False,
-    'autosummary': True,
+    'autosummary': False,
 }
 
 html_theme = 'sphinx_immaterial'
 html_title = 'Google Cloud Pipeline Components Reference Documentation'
 html_static_path = ['_static']
 html_css_files = ['custom.css']
-# html_logo = '_static/kubeflow.png'
-# html_favicon = '_static/favicon.ico'
 html_theme_options = {
     'icon': {
         'repo': 'fontawesome/brands/github',
     },
     'repo_url':
-        'https://github.com/kubeflow/pipelines/tree/master/kubernetes_platform',
+        'https://github.com/kubeflow/pipelines/tree/master/components/google-cloud',
     'repo_name':
         'pipelines',
     'repo_type':
         'github',
     'edit_uri':
-        'blob/master/docs',
+        'https://github.com/kubeflow/pipelines/tree/master/components/google-cloud/docs/source',
     'globaltoc_collapse':
         True,
     'features': [
@@ -97,28 +96,6 @@ html_theme_options = {
         'toc.follow',
         'toc.sticky',
     ],
-    'palette': [
-        {
-            'media': '(prefers-color-scheme: dark)',
-            'scheme': 'slate',
-            'primary': 'kfpblue',
-            # "accent": "lime",
-            'toggle': {
-                'icon': 'material/lightbulb',
-                'name': 'Switch to light mode',
-            },
-        },
-        {
-            'media': '(prefers-color-scheme: light)',
-            'scheme': 'default',
-            'primary': 'kfpblue',
-            # "accent": "light-blue",
-            'toggle': {
-                'icon': 'material/lightbulb-outline',
-                'name': 'Switch to dark mode',
-            },
-        },
-    ],
     'font': {
         'text': 'Open Sans'
     },
@@ -126,9 +103,9 @@ html_theme_options = {
         True,
     'version_info': [{
         'version':
-            'https://kfp-kubernetes.readthedocs.io/en/kfp-kubernetes-0.0.1/',
+            f'https://google-cloud-pipeline-components.readthedocs.io/en/google-cloud-pipeline-components-{VERSION}',
         'title':
-            '0.0.1',
+            VERSION,
         'aliases': ['stable'],
     },],
     # "toc_title_is_page_title": True,
@@ -168,10 +145,9 @@ pygments_style = None
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'KfpKubernetesdoc'
+htmlhelp_basename = 'GoogleCloudPipelineComponentsDocs'
 
 
-# TODO: align with GCPC representation of components (in particular, OutputPath and Output[])
 def strip_outputs_from_signature(app, what, name, obj, options, signature,
                                  return_annotation):
     if signature is not None:
