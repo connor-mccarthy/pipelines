@@ -13,6 +13,8 @@
 # limitations under the License.
 
 from kfp import dsl
+from kfp import components
+import yaml
 import re
 
 
@@ -34,6 +36,19 @@ def component_decorator(*args, **kwargs):
 
 dsl.component = component_decorator
 dsl.container_component = container_component_decorator
+
+
+def load_from_file(path: str):
+    with open(path) as f:
+        contents = f.read()
+        component_dict = yaml.safe_load(contents)
+    comp = components.load_component_from_text(contents)
+    description = component_dict.get('description', '')
+    comp.__doc__ = description
+    return comp
+
+
+components.load_component_from_file = load_from_file
 
 # The short X.Y version
 # update for each release
@@ -57,9 +72,9 @@ extensions = [
     'sphinx_immaterial',
     'autodocsumm',
 ]
-autodoc_member_order = 'bysource'
 autodoc_default_options = {
     'members': True,
+    'member-order': 'bysource',
     'imported-members': True,
     'undoc-members': True,
     'show-inheritance': False,

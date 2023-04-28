@@ -13,6 +13,6 @@
 cp components/google-cloud/docs/source/conf.py .
 pushd components/google-cloud/docs
 make clean html
-open build/html/index.html
+open build/html/api/v1/forecasting.html
 popd
 # python -m sphinx -T -E -b html -d _build/doctrees -D language=en -c source . html
